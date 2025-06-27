@@ -27,7 +27,7 @@ export default function FAQPage() {
         <h2 className="font-semibold">3. Do you provide home service?</h2>
         <p>
           Yes! We offer premium grooming services at your doorstep. Just book an
-          appointment and we’ll come to you.
+          appointment and well come to you.
         </p>
       </div>
 
@@ -42,7 +42,7 @@ export default function FAQPage() {
       <div className="mb-4">
         <h2 className="font-semibold">5. Are your barbers experienced?</h2>
         <p>
-          Absolutely. Our founder Hammad (Ahmad) has over 18 years of
+          Absolutely. Our founder Hammad Ahmad has over 18 years of
           experience, and all staff are trained to deliver high-quality service.
         </p>
       </div>
@@ -82,7 +82,7 @@ export default function FAQPage() {
           9. How long does a haircut usually take?
         </h2>
         <p>
-          A typical haircut takes 30–45 minutes, depending on the style and
+          A typical haircut takes 30 to 45 minutes, depending on the style and
           service.
         </p>
       </div>

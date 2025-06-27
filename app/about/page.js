@@ -13,20 +13,20 @@ export default function AboutPage() {
         </p>
 
         <p>
-          Over the years, his skill and dedication earned him a reputation. Clients didn’t
+          Over the years, his skill and dedication earned him a reputation. Clients didn&apos;t
           just come for a haircut; they came for the experience, a professional who listened,
           styled with precision, and treated every customer like a VIP.
         </p>
 
         <p>
           That vision gave birth to Scissors VIP Salon — a premium grooming destination built
-          on quality, trust, and personal connection. Hammad’s dream was never just one salon.
-          He envisioned a brand that redefined men’s grooming across Dubai, one clean fade and
+          on quality, trust, and personal connection. Hammad&apos;s dream was never just one salon.
+          He envisioned a brand that redefined men&apos;s grooming across Dubai, one clean fade and
           sharp beard at a time.
         </p>
 
         <p>
-         But he didn’t stop there. Understanding the fast-paced lifestyle of modern men,
+         But he didn&apos;t stop there. Understanding the fast-paced lifestyle of modern men,
           he took a bold step, launching exclusive home services, so clients could enjoy
           luxury grooming in the comfort of their own space.</p>
        <p>
@@ -36,7 +36,7 @@ export default function AboutPage() {
         </p>
 
         <p>
-          This is more than a salon. It’s a story of growth, trust, and transformation —
+          This is more than a salon. It&apos;s a story of growth, trust, and transformation —
           and you're part of it.
         </p>
       </div>
