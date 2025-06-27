@@ -10,7 +10,7 @@ export default function FAQPage() {
       <div className="mb-4">
         <h2 className="font-semibold">1. What services do you offer?</h2>
         <p>
-          We offer men's haircuts, beard grooming, facials, hair coloring, and
+          We offer men&apos;s haircuts, beard grooming, facials, hair coloring, and
           home services across Dubai.
         </p>
       </div>
