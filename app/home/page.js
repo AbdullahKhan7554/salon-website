@@ -85,7 +85,7 @@ export default function Home() {
         </div>
 
         <div className="md:w-1/2">
-          <Image  src="/non.jpg"  alt="About us" width={300} height={400}className="rounded-lg shadow-lg object-cover w-full h-auto" />
+          <Image  src="/Non.jpg"  alt="About us" width={300} height={400}className="rounded-lg shadow-lg object-cover w-full h-auto" />
         </div>
       </section>
 
