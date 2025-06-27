@@ -9,10 +9,11 @@ import Footer from "@/components/Footer";
 function WhatsAppButton() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
-      {/* Elegant Enlarged Message */}
-      <div className="bg-white text-black text-base px-2 py-5 rounded-xl shadow-lg animate-bounce w-85 text-center font-semibold">
-         Book your appointment
-      </div>
+  
+      <div className="bg-white text-black text-base px-4 py-3 rounded-xl shadow-lg animate-bounce max-w-fit text-center font-semibold">
+  Book your appointment
+</div>
+
 
       {/* WhatsApp Button */}
       <a

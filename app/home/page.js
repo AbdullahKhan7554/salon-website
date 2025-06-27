@@ -17,17 +17,17 @@ export default function Home() {
   const testimonials = [
     {
       id: 1,
-      name: "Waseem Akram",
-      text: "I've tried many salons in Dubai, but nothing compares to the service at Scissors VIP. Hammad really knows his craft — precise, professional, and genuinely kind.",
+      name: "Muhammad Al mehari",
+      text: "I have tried many salons in Dubai, but nothing compares to the service at Scissors VIP. Hammad really knows his craft — precise, professional, and genuinely kind.",
     },
     {
       id: 2,
-      name: "M. Ahmed",
+      name: "Obaid khamis",
       text: "I booked their home service and was blown away. Same premium quality as the salon, but in the comfort of my living room. Game-changer.",
     },
     {
       id: 3,
-      name: "Hassan bin Razaq",
+      name: "Yaqoob al suwadi",
       text: "Hammad has been cutting my hair for over 5 years now. His attention to detail is unmatched. Every cut feels personal and perfect.",
     },
     {
@@ -37,8 +37,8 @@ export default function Home() {
     },
     {
       id: 5,
-      name: "Adnan Shaikh",
-      text: "Finally, a men’s salon in Dubai that understands premium service. The vibe, the professionalism, the results — 10/10.",
+      name: "mansoor meshar",
+      text: "Finally, a men&apos;s salon in Dubai that understands premium service. The vibe, the professionalism, the results — 10/10.",
     },
   ];
 
@@ -53,7 +53,7 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-opacity-50 flex flex-col justify-center items-center text-white text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-3">
-            Redefining Men’s Grooming in Dubai
+            Redefining Men&apos;s Grooming in Dubai
           </h1>
           <p className="text-base md:text-lg mb-4">
             Salon Experience, Right at Your Doorstep
@@ -76,7 +76,7 @@ export default function Home() {
             haircuts, but confidence.
           </p>
           <p className="text-gray-700">
-            Over the years, his skill and dedication earned him a reputation. Clients didn’t just
+            Over the years, his skill and dedication earned him a reputation. Clients didn&apos;t just
             come for a haircut; they came for the experience, a professional who listened, styled
             with precision, and treated every customer like a VIP.
           </p>

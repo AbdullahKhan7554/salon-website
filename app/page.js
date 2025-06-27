@@ -17,17 +17,17 @@ export default function Home() {
   const testimonials = [
     {
       id: 1,
-      name: "Waseem Akram",
-      text: "I've tried many salons in Dubai, but nothing compares to the service at Scissors VIP. Hammad really knows his craft — precise, professional, and genuinely kind.",
+      name: "Muhammad Al mehari",
+      text: "I have tried many salons in Dubai, but nothing compares to the service at Scissors VIP. Hammad really knows his craft — precise, professional, and genuinely kind.",
     },
     {
       id: 2,
-      name: "M. Ahmed",
+      name: "Obaid khamis",
       text: "I booked their home service and was blown away. Same premium quality as the salon, but in the comfort of my living room. Game-changer.",
     },
     {
       id: 3,
-      name: "Hassan bin Razaq",
+      name: "Yaqoob al suwadi",
       text: "Hammad has been cutting my hair for over 5 years now. His attention to detail is unmatched. Every cut feels personal and perfect.",
     },
     {
@@ -37,8 +37,8 @@ export default function Home() {
     },
     {
       id: 5,
-      name: "Adnan Shaikh",
-      text: "Finally, a men’s salon in Dubai that understands premium service. The vibe, the professionalism, the results — 10/10.",
+      name: "mansoor meshar",
+      text: "Finally, a men&apos;s salon in Dubai that understands premium service. The vibe, the professionalism, the results — 10/10.",
     },
   ];
 
@@ -53,14 +53,14 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-opacity-50 flex flex-col justify-center items-center text-white text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-3">
-            Redefining Men’s Grooming in Dubai
+            Redefining Men&apos;s Grooming in Dubai
           </h1>
           <p className="text-base md:text-lg mb-4">
             Salon Experience, Right at Your Doorstep
           </p>
 
           <Link
-            href="https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon." target="_blank" rel="noopener noreferrer"
+            href="https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon." target="_blank"rel="noopener noreferrer"
             className="bg-white text-black px-6 py-2 rounded hover:bg-black hover:text-white transition font-bold cursor-pointer" > Book an Appointment </Link>
         </div>
       </section>
@@ -76,16 +76,16 @@ export default function Home() {
             haircuts, but confidence.
           </p>
           <p className="text-gray-700">
-            Over the years, his skill and dedication earned him a reputation. Clients didn’t just
+            Over the years, his skill and dedication earned him a reputation. Clients didn&apos;t just
             come for a haircut; they came for the experience, a professional who listened, styled
             with precision, and treated every customer like a VIP.
           </p>
           <Link href="/about">
-            <button type="submit" className="border border-black px-6 py-3 rounded-md hover:bg-black hover:text-white transition mt-7"  > About us </button> </Link>
+            <button  type="submit" className="border border-black px-6 py-3 rounded-md hover:bg-black hover:text-white transition mt-7"  > About us </button> </Link>
         </div>
 
         <div className="md:w-1/2">
-          <Image src="/non.jpg" alt="About us" width={300} height={400} className="rounded-lg shadow-lg object-cover w-full h-auto" />
+          <Image  src="/non.jpg"  alt="About us" width={300} height={400}className="rounded-lg shadow-lg object-cover w-full h-auto" />
         </div>
       </section>
 
@@ -93,7 +93,7 @@ export default function Home() {
       <section className="bg-gray-100 py-16 px-6">
         <h2 className="text-3xl font-bold text-center mb-10">Testimonials</h2>
 
-        <Swiper spaceBetween={30} slidesPerView={1} loop={true} autoplay={{ delay: 3000, disableOnInteraction: false, }} pagination={{ clickable: true }} modules={[Autoplay, Pagination]} breakpoints={{ 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 }, }} >
+        <Swiper spaceBetween={30}  slidesPerView={1}  loop={true} autoplay={{   delay: 3000,  disableOnInteraction: false, }}  pagination={{ clickable: true }} modules={[Autoplay, Pagination]} breakpoints={{ 768: { slidesPerView: 2 },1024: { slidesPerView: 3 },  }} >
 
 
           {testimonials.map((testimonial) => (
