@@ -37,7 +37,7 @@ export default function AboutPage() {
 
         <p>
           This is more than a salon. It&apos;s a story of growth, trust, and transformation —
-          and you&apos;re part of it.
+          and you&apos;re part of its.
         </p>
       </div>
     </div>
