@@ -60,7 +60,7 @@ export default function Home() {
           </p>
 
           <Link
-            href="https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon." target="_blank" rel="noopener noreferrer"
+            href="https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon." target="_blank"rel="noopener noreferrer"
             className="bg-white text-black px-6 py-2 rounded hover:bg-black hover:text-white transition font-bold cursor-pointer" > Book an Appointment </Link>
         </div>
       </section>
@@ -81,11 +81,11 @@ export default function Home() {
             with precision, and treated every customer like a VIP.
           </p>
           <Link href="/about">
-            <button type="submit" className="border border-black px-6 py-3 rounded-md hover:bg-black hover:text-white transition mt-7"  > About us </button> </Link>
+            <button  type="submit" className="border border-black px-6 py-3 rounded-md hover:bg-black hover:text-white transition mt-7"  > About us </button> </Link>
         </div>
 
         <div className="md:w-1/2">
-          <Image src="/non.jpg" alt="About us" width={300} height={400} className="rounded-lg shadow-lg object-cover w-full h-auto" />
+          <Image  src="/non.jpg"  alt="About us" width={300} height={400}className="rounded-lg shadow-lg object-cover w-full h-auto" />
         </div>
       </section>
 
@@ -93,7 +93,7 @@ export default function Home() {
       <section className="bg-gray-100 py-16 px-6">
         <h2 className="text-3xl font-bold text-center mb-10">Testimonials</h2>
 
-        <Swiper spaceBetween={30} slidesPerView={1} loop={true} autoplay={{ delay: 3000, disableOnInteraction: false, }} pagination={{ clickable: true }} modules={[Autoplay, Pagination]} breakpoints={{ 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 }, }} >
+        <Swiper spaceBetween={30}  slidesPerView={1}  loop={true} autoplay={{   delay: 3000,  disableOnInteraction: false, }}  pagination={{ clickable: true }} modules={[Autoplay, Pagination]} breakpoints={{ 768: { slidesPerView: 2 },1024: { slidesPerView: 3 },  }} >
 
 
           {testimonials.map((testimonial) => (
