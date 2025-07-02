@@ -51,7 +51,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Vip Mens Salon",
+  title: "VipMensSalon",
   description: "VIPSCISSORS",
     icons: {
     icon: "/Favicon.svg", 
