@@ -64,6 +64,25 @@ const Footer = () => {
       <p className="text-center text-gray-400 text-sm mt-10">
         © {new Date().getFullYear()} Salon. All rights reserved.
       </p>
+
+      {/* Avenix Studio Credit */}
+      <div className="mt-8 pt-6 border-t border-gray-800 flex justify-center">
+        <a
+          href="https://www.avenixstudios.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-2.5 text-gray-400 transition-all duration-300 ease-in-out hover:scale-[1.03] hover:text-[#D4AF37]"
+        >
+          <img
+            src="/avenix-logo.png"
+            alt="Avenix Studio Logo"
+            className="w-6 h-6 object-contain"
+          />
+          <span className="text-xs sm:text-sm font-medium tracking-wide">
+            Designed &amp; Developed by Avenix Studio
+          </span>
+        </a>
+      </div>
     </footer>
   );
 };
