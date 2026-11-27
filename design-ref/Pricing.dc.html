@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pricing — Scissors VIP Salon</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFE8DC}
+a{color:#8C2F1F;text-decoration:none}a:hover{color:#6E2215}
+</style>
+</helmet>
+<div style="background:#EFE8DC;color:#161311;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65">
+<dc-import name="Header" active="pricing" hint-size="100%,88px"></dc-import>
+<main>
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) 28px 0">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#5E554B;margin-bottom:28px"><a href="Home.dc.html" style="color:#5E554B">Home</a> / <span style="color:#161311">Pricing</span></nav>
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px;padding-bottom:40px;border-bottom:1px solid #161311">
+<h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,7.4vw,108px);line-height:0.95;letter-spacing:-0.02em">Men's salon<br><em style="color:#8C2F1F">price list</em></h1>
+<p style="margin:0;color:#5E554B;max-width:360px;font-size:17px">Clear prices, no surprises. All prices in AED and include 5% UAE VAT.</p>
+</div>
+</section>
+
+<section aria-label="Price list" style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,80px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px 64px">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="3">
+<div>
+<h2 style="margin:0 0 8px;font-family:'Instrument Serif',serif;font-weight:400;font-size:40px;line-height:1.1">{{g.title}}</h2>
+<p style="margin:0 0 20px;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#5E554B">{{g.count}}</p>
+<ul style="margin:0;padding:0;list-style:none">
+<sc-for list="{{g.items}}" as="i" hint-placeholder-count="6">
+<li style="display:flex;align-items:baseline;gap:10px;padding:14px 0;border-bottom:1px solid #CFC6B8">
+<span style="font-size:16px">{{i.name}}</span>
+<span aria-hidden="true" style="flex:1 1 auto;border-bottom:1px dotted #A69C8E;transform:translateY(-4px)"></span>
+<span style="font-weight:500;color:#8C2F1F;white-space:nowrap">{{i.price}} AED</span>
+</li>
+</sc-for>
+</ul>
+</div>
+</sc-for>
+</section>
+
+<section style="background:#161311;color:#EFE8DC">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,104px) 28px;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;align-items:center">
+<div style="flex:1 1 480px;min-width:0">
+<h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,4.6vw,64px);line-height:1">Home visits across Dubai</h2>
+<p style="margin:20px 0 0;color:#CFC6B8;font-size:17px;max-width:520px">Any service on this list can be booked at your home, office or hotel. Message us your location and we will confirm the visit.</p>
+</div>
+<a href="https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20a%20home%20visit." style="background:#8C2F1F;color:#EFE8DC;padding:18px 30px;min-height:56px;box-sizing:border-box;display:inline-flex;align-items:center;gap:12px;font-size:15px">Book a home visit <span aria-hidden="true">→</span></a>
+</div>
+</section>
+
+<section aria-label="Pricing notes" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;font-size:15px;color:#5E554B">
+<p style="margin:0;padding-top:20px;border-top:1px solid #CFC6B8"><strong style="color:#161311;font-weight:600">VAT included.</strong> Every price includes 5% UAE VAT.</p>
+<p style="margin:0;padding-top:20px;border-top:1px solid #CFC6B8"><strong style="color:#161311;font-weight:600">Custom requests.</strong> Prices may vary slightly with hair length, thickness or special requests.</p>
+<p style="margin:0;padding-top:20px;border-top:1px solid #CFC6B8"><strong style="color:#161311;font-weight:600">Cancellations.</strong> Please give at least 12 hours' notice. <a href="Terms.dc.html">Terms</a></p>
+</section>
+</main>
+<dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2400}}'>
+class Component extends DCLogic {
+renderVals() {
+const i = (name, price) => ({ name, price });
+const g = (title, items) => ({ title, items, count: items.length + ' services' });
+return {
+groups: [
+g('Hair', [i('Hair Cut','80'), i('Hair Trimming','80'), i('Kids Hair Cut','80'), i('Hair Dye','100'), i('Hair Colouring','100'), i('Hair Straightening','130'), i('Hair Wash & Blow Dry','80')]),
+g('Beard & Shave', [i('Shaving','60'), i('Shaving / Trimming','80'), i('Beard Colouring','100'), i('Beard Styling with Scissors','130')]),
+g('Face & Skin', [i('Nose Wax','60'), i('Sticky Hair Removal','60'), i('Nose Mask','60'), i('Facial Mask','80'), i('Facial (No Steam Cleaning)','130'), i('Facial','140')])
+]
+};
+}
+}
+</script>
+</body>
+</html>

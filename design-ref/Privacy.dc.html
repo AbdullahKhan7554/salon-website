@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Privacy Policy — Scissors VIP Salon</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFE8DC}
+a{color:#8C2F1F;text-decoration:none}a:hover{color:#6E2215}
+</style>
+</helmet>
+<div style="background:#EFE8DC;color:#161311;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.7">
+<dc-import name="Header" active="none" hint-size="100%,88px"></dc-import>
+<main style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) 28px clamp(72px,9vw,128px)">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#5E554B;margin-bottom:28px"><a href="Home.dc.html" style="color:#5E554B">Home</a> / <span style="color:#161311">Privacy Policy</span></nav>
+<h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(48px,6vw,88px);line-height:0.95">Privacy Policy</h1>
+<p style="margin:20px 0 56px;color:#5E554B;font-size:17px;max-width:640px">How Scissors VIP Salon collects, uses and protects your information.</p>
+<div style="display:flex;flex-direction:column;border-top:1px solid #161311">
+<sc-for list="{{sections}}" as="s" hint-placeholder-count="8">
+<section style="display:flex;flex-wrap:wrap;gap:12px clamp(32px,5vw,80px);padding:36px 0;border-bottom:1px solid #CFC6B8">
+<h2 style="margin:0;flex:1 1 260px;min-width:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.15"><span style="color:#8C2F1F;margin-right:12px">{{s.n}}</span>{{s.title}}</h2>
+<ul style="margin:0;flex:2 1 480px;min-width:0;padding-left:20px;color:#2C2622">
+<sc-for list="{{s.points}}" as="p" hint-placeholder-count="3"><li style="margin-bottom:8px">{{p.t}}</li></sc-for>
+</ul>
+</section>
+</sc-for>
+</div>
+</main>
+<dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2000}}'>
+class Component extends DCLogic {
+renderVals() {
+const s = (n, title, pts) => ({ n, title, points: pts.map((t) => ({ t })) });
+return {
+sections: [
+s('01', 'Information we collect', ['Contact details you give when booking: name, phone and email.', 'Payment details, handled by a third-party payment gateway.', 'Optional feedback, preferences and before/after photos.']),
+s('02', 'How we use your data', ['To confirm and schedule appointments and send reminders.', 'To improve our service and your experience.', 'To send promotions, only with your explicit consent.']),
+s('03', 'Data protection', ['Client data is stored securely, in line with UAE Federal Decree Law No. 45 of 2021.', 'Payments are processed on PCI-DSS compliant platforms.']),
+s('04', 'Cookies', ['We may use cookies for performance, analytics and personalisation.', 'You can turn cookies off in your browser settings.']),
+s('05', 'Third parties', ['We never sell your personal data.', 'We ask for consent before sharing data for promotions or collaborations.']),
+s('06', 'Your rights', ['You can ask to view, update or delete your data at any time.', 'You can unsubscribe from marketing messages whenever you like.']),
+s('07', 'Contact us', ['Scissors VIP Salon, Rashid Building, Saih Al Salam Street, Al Lisaili, Dubai, UAE.', 'Phone +971 50 137 4524, email scissorsvipsalon@gmail.com.'])
+]
+};
+}
+}
+</script>
+</body>
+</html>

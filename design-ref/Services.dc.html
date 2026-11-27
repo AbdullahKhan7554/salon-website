@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Services — Scissors VIP Salon</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFE8DC}
+a{color:#8C2F1F;text-decoration:none}a:hover{color:#6E2215}
+</style>
+</helmet>
+<div style="background:#EFE8DC;color:#161311;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65">
+<dc-import name="Header" active="services" hint-size="100%,88px"></dc-import>
+<main>
+<section style="background:#161311;color:#EFE8DC">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) 28px">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#A69C8E;margin-bottom:28px"><a href="Home.dc.html" style="color:#A69C8E">Home</a> / <span style="color:#EFE8DC">Services</span></nav>
+<h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,7.4vw,108px);line-height:0.95;letter-spacing:-0.02em">Men's grooming services<br>in <em style="color:#D9B9A8">Dubai</em></h1>
+<p style="margin:28px 0 0;color:#CFC6B8;font-size:18px;max-width:600px">Hair, beard and facial care by an expert barber with 18+ years of experience. Every service is available in our salon or at your home.</p>
+<div style="margin-top:36px;display:flex;flex-wrap:wrap;gap:12px 32px;font-size:14px;letter-spacing:0.12em;text-transform:uppercase">
+<a href="#hair" style="color:#EFE8DC;border-bottom:1px solid #6B6258;padding:12px 0 4px">Hair</a>
+<a href="#beard" style="color:#EFE8DC;border-bottom:1px solid #6B6258;padding:12px 0 4px">Beard</a>
+<a href="#face" style="color:#EFE8DC;border-bottom:1px solid #6B6258;padding:12px 0 4px">Face &amp; skin</a>
+</div>
+</div>
+</section>
+
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="3">
+<section id="{{g.id}}" style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,104px) 28px 0">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:28px;border-bottom:1px solid #161311;margin-bottom:40px">
+<h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,4.6vw,64px);line-height:1"><span style="color:#8C2F1F;font-size:0.5em;vertical-align:middle;margin-right:16px">{{g.no}}</span>{{g.title}}</h2>
+<p style="margin:0;color:#5E554B;max-width:380px">{{g.intro}}</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:48px 28px">
+<sc-for list="{{g.items}}" as="s" hint-placeholder-count="4">
+<article style="display:flex;flex-direction:column;gap:14px">
+<div role="img" aria-label="{{s.alt}}" style="aspect-ratio:4/3;background:#DDD3C3;display:flex;align-items:center;justify-content:center;color:#7A7064;font-size:11px;letter-spacing:0.18em;text-transform:uppercase">{{s.img}}</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+<h3 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:27px;line-height:1.15">{{s.name}}</h3>
+<span style="color:#8C2F1F;font-weight:500;font-size:15px;white-space:nowrap">AED {{s.price}}</span>
+</div>
+<p style="margin:0;color:#5E554B;font-size:15px">{{s.desc}}</p>
+</article>
+</sc-for>
+</div>
+</section>
+</sc-for>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(80px,9vw,128px) 28px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px;padding:48px 0;border-top:1px solid #CFC6B8;border-bottom:1px solid #CFC6B8">
+<p style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(30px,3.4vw,46px);line-height:1.1;max-width:640px">Prefer it at home? Every service is available as a <em style="color:#8C2F1F">home visit</em> across Dubai.</p>
+<a href="Pricing.dc.html" style="font-size:15px;border-bottom:1px solid #8C2F1F;padding:12px 0 4px">View full price list →</a>
+</div>
+</section>
+</main>
+<dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4100}}'>
+class Component extends DCLogic {
+renderVals() {
+const s = (name, price, desc, img, alt) => ({ name, price, desc, img: 'services/' + img, alt });
+return {
+groups: [
+{ id: 'hair', no: '01', title: 'Hair', intro: 'Cuts, colour and styling, from classic to modern fades.', items: [
+s('Hair Cut', '80', 'Classic, fade or modern styles crafted by an experienced barber.', 'hair.jpg', "Men's haircut in Dubai"),
+s('Hair Trimming', '80', 'Maintain your look with a clean, precise trim.', 'hairtriming.jpg', 'Men’s hair trim'),
+s('Kids Hair Cut', '80', 'Gentle and stylish cuts for kids of all ages.', 'kid.jpg', 'Kids haircut in Dubai'),
+s('Hair Dye', '100', 'Vibrant colour using safe and lasting formulas.', 'dye.jpg', 'Men’s hair dye'),
+s('Hair Colouring', '100', 'Customised colouring for a new, fresh look.', 'hair-color.jpg', 'Men’s hair colouring'),
+s('Hair Straightening', '130', 'Sleek, smooth styles with long-lasting results.', 'straightening.jpg', 'Men’s hair straightening'),
+s('Hair Wash & Blow Dry', '80', 'A fresh wash followed by expert blow drying and styling.', 'blowdry.jpg', 'Hair wash and blow dry')
+]},
+{ id: 'beard', no: '02', title: 'Beard & shave', intro: 'Sharp lines and smooth shaves with premium tools.', items: [
+s('Shaving / Trimming', '80', 'A smooth shave or a neat trim using premium tools.', 'shave.jpg', 'Beard shave and trim'),
+s('Beard Styling with Scissors', '130', 'Detailed beard sculpting using professional techniques.', 'beardstyling.jpg', 'Beard styling with scissors'),
+s('Beard Colouring', '100', 'Custom beard shades to match your style.', 'beard-color.jpg', 'Beard colouring')
+]},
+{ id: 'face', no: '03', title: 'Face & skin', intro: 'Facials, masks and clean, precise hair removal.', items: [
+s('Facial', '140', 'Deep cleansing and hydration for healthy skin.', 'facial.jpg', 'Men’s facial in Dubai'),
+s('Facial (No Steam)', '130', 'A gentle facial without steam for sensitive skin.', 'facial-no-steam.jpg', 'Facial without steam'),
+s('Facial Mask', '80', 'Skin-rejuvenating masks for a fresh glow.', 'facial-mask.jpg', 'Men’s facial mask'),
+s('Nose Mask', '60', 'A cleansing mask for a clear, blackhead-free nose.', 'nose-mask.jpg', 'Nose mask treatment'),
+s('Nose Wax', '60', 'Quick hair removal for a clean look.', 'nose-wax.jpg', 'Nose wax hair removal'),
+s('Sticky Hair Removal', '60', 'Effective sticky wax for smooth skin.', 'sticky-wax.jpg', 'Sticky wax hair removal')
+]}
+]
+};
+}
+}
+</script>
+</body>
+</html>

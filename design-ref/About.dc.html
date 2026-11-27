@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About — Scissors VIP Salon</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFE8DC}
+a{color:#8C2F1F;text-decoration:none}a:hover{color:#6E2215}
+</style>
+</helmet>
+<div style="background:#EFE8DC;color:#161311;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65">
+<dc-import name="Header" active="about" hint-size="100%,88px"></dc-import>
+<main>
+<section style="background:#161311;color:#EFE8DC">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) 28px clamp(64px,8vw,112px);display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-end">
+<div style="flex:1 1 520px;min-width:0">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#A69C8E;margin-bottom:28px"><a href="Home.dc.html" style="color:#A69C8E">Home</a> / <span style="color:#EFE8DC">About</span></nav>
+<h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,7.4vw,108px);line-height:0.95;letter-spacing:-0.02em">A pair of scissors<br>and a <em style="color:#D9B9A8">dream.</em></h1>
+<p style="margin:28px 0 0;color:#CFC6B8;font-size:18px;max-width:540px">The story of Hammad "Ahmad" and Scissors VIP Salon, Dubai.</p>
+</div>
+<div role="img" aria-label="Hammad, founder of Scissors VIP Salon, at work" style="flex:1 1 380px;min-width:0;aspect-ratio:4/5;background:#241F1B;display:flex;align-items:center;justify-content:center;color:#6B6258;font-size:12px;letter-spacing:0.2em;text-transform:uppercase">Non.jpg</div>
+</div>
+</section>
+
+<section aria-label="Our story" style="max-width:1280px;margin:0 auto;padding:clamp(72px,9vw,128px) 28px">
+<sc-for list="{{chapters}}" as="c" hint-placeholder-count="4">
+<div style="display:flex;flex-wrap:wrap;gap:16px clamp(32px,5vw,80px);padding:48px 0;border-top:1px solid #CFC6B8">
+<div style="flex:1 1 260px;min-width:0">
+<span style="font-family:'Instrument Serif',serif;font-size:28px;color:#8C2F1F">{{c.n}}</span>
+<h2 style="margin:6px 0 0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(32px,3.4vw,44px);line-height:1.1">{{c.title}}</h2>
+</div>
+<p style="margin:0;flex:2 1 480px;min-width:0;color:#2C2622;font-size:18px;line-height:1.7">{{c.text}}</p>
+</div>
+</sc-for>
+</section>
+
+<section aria-labelledby="values-title" style="background:#161311;color:#EFE8DC">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(72px,9vw,128px) 28px">
+<h2 id="values-title" style="margin:0 0 56px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,5vw,72px);line-height:1">What we stand for</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px">
+<sc-for list="{{values}}" as="v" hint-placeholder-count="4">
+<div style="padding-top:20px;border-top:1px solid #4A433B">
+<h3 style="margin:0 0 8px;font-family:'Instrument Serif',serif;font-weight:400;font-size:28px">{{v.title}}</h3>
+<p style="margin:0;color:#CFC6B8;font-size:15px">{{v.text}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(72px,9vw,120px) 28px;display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center">
+<p style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(32px,3.8vw,52px);line-height:1.1;max-width:720px">Be part of the story. Book your first <em style="color:#8C2F1F">VIP</em> cut.</p>
+<div style="display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center">
+<a href="Services.dc.html" style="font-size:15px;border-bottom:1px solid #8C2F1F;padding:12px 0 4px">Our services →</a>
+<a href="Contact.dc.html" style="background:#8C2F1F;color:#EFE8DC;padding:18px 30px;min-height:56px;box-sizing:border-box;display:inline-flex;align-items:center;font-size:15px">Book now</a>
+</div>
+</section>
+</main>
+<dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+chapters: [
+{ n: 'I', title: 'The beginning', text: 'Nearly two decades ago, Hammad, known to everyone as Ahmad, stepped into the world of grooming with little more than a pair of scissors, hard work and a love of style. Every cut shaped more than hair. It shaped a client’s confidence.' },
+{ n: 'II', title: 'A loyal following', text: 'His skill and dedication built a reputation. Clients kept coming back, not just for a haircut, but for the whole experience: attentive service, precise styling and VIP treatment every single visit.' },
+{ n: 'III', title: 'Scissors VIP Salon', text: 'That loyalty became Scissors VIP Salon, a premium men’s grooming house built on quality, trust and personal connection, with one aim: to set a new standard for men’s grooming in Dubai.' },
+{ n: 'IV', title: 'Luxury, at home', text: 'For clients with busy schedules, Hammad launched exclusive home services, bringing the same salon-quality grooming to your home, office or hotel anywhere in Dubai.' }
+],
+values: [
+{ title: 'Precision', text: 'Every line, fade and finish done with care and professional technique.' },
+{ title: 'Trust', text: 'Clients who stay for years, because the standard never drops.' },
+{ title: 'VIP for all', text: 'Personal, attentive service for every client who sits in the chair.' },
+{ title: 'Convenience', text: 'Salon-quality grooming at your doorstep when you need it.' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

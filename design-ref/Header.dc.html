@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Site header</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<header style="background:#161311;color:#EFE8DC;font-family:Inter,system-ui,sans-serif;border-bottom:1px solid #2B2622">
+<nav aria-label="Main" style="max-width:1280px;margin:0 auto;padding:16px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px">
+<a href="Home.dc.html" aria-label="Scissors VIP Salon home" style="color:#EFE8DC;text-decoration:none;line-height:1">
+<span style="display:block;font-family:'Instrument Serif',serif;font-size:30px">Scissors</span>
+<span style="display:block;font-size:10px;letter-spacing:0.5em;color:#A69C8E;margin-top:4px">VIP SALON · DUBAI</span>
+</a>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">
+<sc-for list="{{links}}" as="l" hint-placeholder-count="5">
+<a href="{{l.href}}" style="{{l.style}}">{{l.label}}</a>
+</sc-for>
+<a href="https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon." style="background:#8C2F1F;color:#EFE8DC;text-decoration:none;padding:13px 22px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;gap:10px">Book now <span aria-hidden="true">→</span></a>
+</div>
+</nav>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"active":{"editor":"enum","options":["home","services","pricing","about","faq","contact","none"],"default":"home"},"$preview":{"width":1440,"height":88}}'>
+class Component extends DCLogic {
+renderVals() {
+const a = this.props.active ?? 'home';
+const items = [['services','Services','Services.dc.html'],['pricing','Pricing','Pricing.dc.html'],['about','About','About.dc.html'],['faq','FAQ','FAQ.dc.html'],['contact','Contact','Contact.dc.html']];
+return { links: items.map(([id,label,href]) => ({ label, href, style: id === a ? 'color:#EFE8DC;text-decoration:none;border-bottom:1px solid #EFE8DC;padding:12px 0 4px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:flex-end' : 'color:#CFC6B8;text-decoration:none;padding:12px 0 4px;border-bottom:1px solid transparent;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:flex-end' })) };
+}
+}
+</script>
+</body>
+</html>

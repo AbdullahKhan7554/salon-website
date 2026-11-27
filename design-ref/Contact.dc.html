@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact — Scissors VIP Salon</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFE8DC}
+a{color:#8C2F1F;text-decoration:none}a:hover{color:#6E2215}
+</style>
+</helmet>
+<div style="background:#EFE8DC;color:#161311;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65">
+<dc-import name="Header" active="contact" hint-size="100%,88px"></dc-import>
+<main>
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) 28px clamp(48px,6vw,72px)">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#5E554B;margin-bottom:28px"><a href="Home.dc.html" style="color:#5E554B">Home</a> / <span style="color:#161311">Contact</span></nav>
+<h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,7.4vw,108px);line-height:0.95;letter-spacing:-0.02em">Book your <em style="color:#8C2F1F">appointment</em></h1>
+<p style="margin:24px 0 0;color:#5E554B;font-size:18px;max-width:560px">Visit us in Al Lisaili or book a home visit anywhere in Dubai. We usually confirm on WhatsApp within minutes.</p>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:0 28px clamp(72px,9vw,120px);display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,96px);align-items:flex-start">
+<form aria-label="Booking request" style="flex:3 1 520px;min-width:0;display:flex;flex-direction:column;gap:22px;padding-top:32px;border-top:1px solid #161311">
+<fieldset style="border:0;margin:0;padding:0">
+<legend style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#5E554B;margin-bottom:12px">Where</legend>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<button type="button" onClick="{{pickSalon}}" style="{{salonStyle}}">In the salon</button>
+<button type="button" onClick="{{pickHome}}" style="{{homeStyle}}">Home visit</button>
+</div>
+</fieldset>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px">
+<label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500">Your name<input type="text" autocomplete="name" style="font:inherit;font-weight:400;font-size:16px;padding:14px 0;border:0;border-bottom:1px solid #A69C8E;background:transparent;min-height:48px"></label>
+<label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500">Phone / WhatsApp<input type="tel" autocomplete="tel" style="font:inherit;font-weight:400;font-size:16px;padding:14px 0;border:0;border-bottom:1px solid #A69C8E;background:transparent;min-height:48px"></label>
+<label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500">Service<select style="font:inherit;font-weight:400;font-size:16px;padding:14px 0;border:0;border-bottom:1px solid #A69C8E;background:transparent;min-height:48px"><option>Hair Cut — 80 AED</option><option>Beard Styling — 130 AED</option><option>Shaving — 60 AED</option><option>Facial — 140 AED</option><option>Other</option></select></label>
+<label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500">Preferred date &amp; time<input type="datetime-local" style="font:inherit;font-weight:400;font-size:16px;padding:14px 0;border:0;border-bottom:1px solid #A69C8E;background:transparent;min-height:48px"></label>
+</div>
+<sc-if value="{{isHome}}" hint-placeholder-val="{{ false }}">
+<label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500">Your area in Dubai<input type="text" style="font:inherit;font-weight:400;font-size:16px;padding:14px 0;border:0;border-bottom:1px solid #A69C8E;background:transparent;min-height:48px"></label>
+</sc-if>
+<label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500">Message (optional)<textarea rows="3" style="font:inherit;font-weight:400;font-size:16px;padding:14px 0;border:0;border-bottom:1px solid #A69C8E;background:transparent;resize:vertical"></textarea></label>
+<div style="display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:8px">
+<button type="button" style="background:#8C2F1F;color:#EFE8DC;border:0;padding:18px 30px;min-height:56px;font:inherit;font-size:15px;font-weight:500;cursor:pointer">Send on WhatsApp →</button>
+<span style="font-size:14px;color:#5E554B">Or call <a href="tel:+971501374524">+971 50 137 4524</a></span>
+</div>
+</form>
+
+<aside aria-label="Salon details" style="flex:2 1 360px;min-width:0;display:flex;flex-direction:column;gap:28px;padding-top:32px;border-top:1px solid #161311">
+<address style="font-style:normal">
+<h2 style="margin:0 0 8px;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#5E554B">Salon address</h2>
+<p style="margin:0;font-family:'Instrument Serif',serif;font-size:28px;line-height:1.25">Rashid Building, Saih Al Salam Street, Al Lisaili, Dubai, UAE</p>
+</address>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+<div><h2 style="margin:0 0 6px;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#5E554B">Hours</h2>Mon – Sun<br>10 am – 10 pm</div>
+<div><h2 style="margin:0 0 6px;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#5E554B">Email</h2><a href="mailto:scissorsvipsalon@gmail.com" style="word-break:break-all">scissorsvipsalon@gmail.com</a></div>
+</div>
+<div role="img" aria-label="Map of Scissors VIP Salon, Al Lisaili, Dubai" style="aspect-ratio:4/3;background:#DDD3C3;display:flex;align-items:center;justify-content:center;color:#7A7064;font-size:12px;letter-spacing:0.2em;text-transform:uppercase">Google Map embed</div>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=24.9359,55.4767" style="font-size:15px;border-bottom:1px solid #8C2F1F;padding:12px 0 4px;align-self:flex-start">Get directions →</a>
+</aside>
+</section>
+</main>
+<dc-import name="Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2000}}'>
+class Component extends DCLogic {
+renderVals() {
+const home = (this.state && this.state.where) === 'home';
+const on = 'font:inherit;font-size:15px;padding:12px 22px;min-height:48px;cursor:pointer;background:#161311;color:#EFE8DC;border:1px solid #161311';
+const off = 'font:inherit;font-size:15px;padding:12px 22px;min-height:48px;cursor:pointer;background:transparent;color:#161311;border:1px solid #A69C8E';
+return {
+isHome: home,
+salonStyle: home ? off : on,
+homeStyle: home ? on : off,
+pickSalon: () => this.setState({ where: 'salon' }),
+pickHome: () => this.setState({ where: 'home' })
+};
+}
+}
+</script>
+</body>
+</html>
