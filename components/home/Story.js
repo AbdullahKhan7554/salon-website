@@ -19,12 +19,12 @@ export default function Story() {
           </p>
           <Link
             href="/about"
-            className="mt-8 text-bone border-b border-[#6B6258] pt-3 pb-1 min-h-11 box-border inline-flex items-end"
+            className="mt-8 text-bone border-b border-ink-border pt-3 pb-1 min-h-11 box-border inline-flex items-end"
           >
             Read our story →
           </Link>
         </div>
-        <div className="flex-[1_1_340px] min-w-0 aspect-[3/4] bg-[#241F1B] overflow-hidden">
+        <div className="flex-[1_1_340px] min-w-0 aspect-[3/4] bg-ink-raised overflow-hidden">
           <Image
             src="/hammad-founder-scissors-vip-salon.jpg"
             alt="Hammad, founder of Scissors VIP Salon"

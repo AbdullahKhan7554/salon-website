@@ -12,7 +12,7 @@ export default function Story() {
               {c.title}
             </h2>
           </div>
-          <p className="m-0 flex-[2_1_480px] min-w-0 text-[#2C2622] text-lg leading-[1.7]">{c.text}</p>
+          <p className="m-0 flex-[2_1_480px] min-w-0 text-ink-body text-lg leading-[1.7]">{c.text}</p>
         </div>
       ))}
     </section>

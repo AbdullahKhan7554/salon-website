@@ -30,7 +30,7 @@ export default function LegalPage({ title, intro, sections }) {
               <span className="text-accent mr-3">{s.n}</span>
               {s.title}
             </h2>
-            <ul className="m-0 flex-[2_1_480px] min-w-0 pl-5 list-disc text-[#2C2622]">
+            <ul className="m-0 flex-[2_1_480px] min-w-0 pl-5 list-disc text-ink-body">
               {s.points.map((p, i) => (
                 <li key={i} className="mb-2">
                   {p}

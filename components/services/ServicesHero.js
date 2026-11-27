@@ -7,7 +7,7 @@ const JUMP = [
   { href: "#face", label: "Face & skin" },
 ];
 
-const lightLink = "text-bone border-b border-[#6B6258] pt-3 pb-1 min-h-11 box-border inline-flex items-end";
+const lightLink = "text-bone border-b border-ink-border pt-3 pb-1 min-h-11 box-border inline-flex items-end";
 
 export default function ServicesHero() {
   return (
@@ -22,7 +22,7 @@ export default function ServicesHero() {
         <h1 className="m-0 font-serif font-normal text-[clamp(52px,7.4vw,108px)] leading-[0.95] tracking-[-0.02em]">
           Men&apos;s grooming services
           <br />
-          in <em className="text-[#D9B9A8]">Dubai</em>
+          in <em className="text-accent-soft">Dubai</em>
         </h1>
         <p className="mt-7 mb-0 text-ink-text text-lg max-w-[600px]">
           Hair, beard and facial care by an expert barber with 18+ years of experience. Every service is available in

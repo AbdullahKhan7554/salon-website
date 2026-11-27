@@ -41,7 +41,7 @@ export default function Testimonials() {
       <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-10">
         {REVIEWS.map((r) => (
           <figure key={r.name} className="m-0">
-            <blockquote className="m-0 text-base text-[#2C2622]">&ldquo;{r.text}&rdquo;</blockquote>
+            <blockquote className="m-0 text-base text-ink-body">&ldquo;{r.text}&rdquo;</blockquote>
             <figcaption className="mt-4 text-xs tracking-[0.16em] uppercase text-muted">{r.name}</figcaption>
           </figure>
         ))}

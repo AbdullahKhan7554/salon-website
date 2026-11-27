@@ -55,7 +55,7 @@ export default function FaqList() {
               +
             </span>
           </summary>
-          <p className="m-0 mb-7 max-w-[640px] text-[#2C2622] text-[17px]">{f.a}</p>
+          <p className="m-0 mb-7 max-w-[640px] text-ink-body text-[17px]">{f.a}</p>
         </details>
       ))}
     </div>

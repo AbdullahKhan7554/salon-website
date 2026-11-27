@@ -8,8 +8,8 @@ export const OG_DEFAULTS = {
   images: [
     {
       url: "/home/scissors-vip-salon-dubai.jpg",
-      width: 1200,
-      height: 630,
+      width: 1536,
+      height: 1024,
       alt: "Scissors VIP Salon, men's salon in Dubai",
     },
   ],

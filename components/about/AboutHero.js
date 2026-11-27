@@ -18,13 +18,13 @@ export default function AboutHero() {
           <h1 className="m-0 font-serif font-normal text-[clamp(52px,7.4vw,108px)] leading-[0.95] tracking-[-0.02em]">
             A pair of scissors
             <br />
-            and a <em className="text-[#D9B9A8]">dream.</em>
+            and a <em className="text-accent-soft">dream.</em>
           </h1>
           <p className="mt-7 mb-0 text-ink-text text-lg max-w-[540px]">
             The story of Hammad &quot;Ahmad&quot; and Scissors VIP Salon, Dubai.
           </p>
         </div>
-        <div className="flex-[1_1_380px] min-w-0 aspect-[4/5] bg-[#241F1B] overflow-hidden">
+        <div className="flex-[1_1_380px] min-w-0 aspect-[4/5] bg-ink-raised overflow-hidden">
           <Image
             src="/hammad-founder-scissors-vip-salon.jpg"
             alt="Hammad, founder of Scissors VIP Salon, at work"

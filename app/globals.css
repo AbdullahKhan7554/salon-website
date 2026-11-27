@@ -12,6 +12,11 @@
   --ink-text: #CFC6B8;
   --ink-line: #2B2622;
   --placeholder: #DDD3C3;
+  --accent-soft: #D9B9A8;
+  --ink-raised: #241F1B;
+  --ink-border: #6B6258;
+  --ink-rule: #4A433B;
+  --ink-body: #2C2622;
 }
 
 @theme inline {
@@ -25,6 +30,11 @@
   --color-ink-text: var(--ink-text);
   --color-ink-line: var(--ink-line);
   --color-placeholder: var(--placeholder);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink-raised: var(--ink-raised);
+  --color-ink-border: var(--ink-border);
+  --color-ink-rule: var(--ink-rule);
+  --color-ink-body: var(--ink-body);
   --font-serif: var(--font-libre-baskerville), Georgia, serif;
   --font-sans: var(--font-lato), system-ui, sans-serif;
 }
