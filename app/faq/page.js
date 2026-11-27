@@ -32,7 +32,7 @@ export default function FAQPage() {
         crumb="FAQ"
         title={
           <>
-            Questions, <em>answered.</em>
+            Questions, <span>answered.</span>
           </>
         }
         subtitle="Everything about our salon, home visits and booking. Still unsure? Message us."

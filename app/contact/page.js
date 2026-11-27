@@ -19,7 +19,7 @@ export default function ContactPage() {
         crumb="Contact"
         title={
           <>
-            Book your <em>appointment</em>
+            Book your <span>appointment</span>
           </>
         }
         subtitle="Visit us in Al Lisaili or book a home visit anywhere in Dubai. We usually confirm on WhatsApp within minutes."

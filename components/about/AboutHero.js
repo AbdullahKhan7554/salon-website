@@ -9,7 +9,7 @@ export default function AboutHero() {
         <>
           A pair of scissors
           <br />
-          and a <em>dream.</em>
+          and a <span>dream.</span>
         </>
       }
       subtitle={<>The story of Hammad &quot;Ahmad&quot; and Scissors VIP Salon, Dubai.</>}

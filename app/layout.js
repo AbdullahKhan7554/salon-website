@@ -58,12 +58,6 @@ export const metadata = {
 };
 
 
-// Runs before first paint. Injects a style tag (React leaves it alone, unlike classes on
-// <html>, which hydration resets): repeat visit in this session -> hide the preloader,
-// first visit -> lock scroll while it shows. Preloader.js removes the tag when it is done.
-// The key must match PRELOAD_KEY in components/Preloader.js.
-const PRELOAD_SCRIPT = `(function(){var skip=false;try{skip=sessionStorage.getItem("svip-preloaded")==="1"}catch(e){}var s=document.createElement("style");s.id="svip-preload-style";s.dataset.state=skip?"skip":"show";s.textContent=skip?".svip-preloader{display:none!important}":"html,body{overflow:hidden!important}";document.head.appendChild(s)})()`;
-
 export default function RootLayout({ children }) {
   return (
     <html
@@ -71,9 +65,9 @@ export default function RootLayout({ children }) {
       className={`${heading.variable} ${body.variable} ${label.variable}`}
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: PRELOAD_SCRIPT }} />
+        {/* Without JavaScript the preloader could never be dismissed: hide it outright. */}
         <noscript>
-          <style>{`.svip-preloader{display:none}`}</style>
+          <style>{`.svip-preloader{display:none}html{overflow:visible!important}`}</style>
         </noscript>
       </head>
       <body

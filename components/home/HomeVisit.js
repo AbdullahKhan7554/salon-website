@@ -26,7 +26,7 @@ export default function HomeVisit() {
         <h2 id="home-title" className={sectionTitle}>
           The salon,
           <br />
-          <em className="text-accent">at your door.</em>
+          <span className="text-accent">at your door.</span>
         </h2>
         <p className="mt-6 mb-9 text-muted text-body max-w-[460px]">
           Home grooming across most areas of Dubai. Same tools, same standard, every tool sanitised for every visit.

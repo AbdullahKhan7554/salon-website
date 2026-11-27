@@ -9,7 +9,7 @@ export default function PricingHero() {
         <>
           Men&apos;s salon
           <br />
-          <em>price list</em>
+          <span>price list</span>
         </>
       }
       subtitle="Clear prices, no surprises. All prices in AED and include 5% UAE VAT."

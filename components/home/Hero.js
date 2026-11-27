@@ -12,7 +12,7 @@ export default function Hero() {
       titleAs="p"
       title={
         <>
-          The gentleman&apos;s cut, <em>perfected</em> in Dubai.
+          The gentleman&apos;s cut, <span>perfected</span> in Dubai.
         </>
       }
       actions={

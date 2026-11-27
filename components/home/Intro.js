@@ -10,7 +10,7 @@ export default function Intro() {
     >
       <p className="m-0 font-heading text-intro lg:flex-1 min-w-0">
         One barber who listens first, cuts with precision and treats every client as a{" "}
-        <em className="text-accent">VIP</em>. In the salon, or in your living room.
+        <span className="text-accent">VIP</span>. In the salon, or in your living room.
       </p>
       <div className="lg:flex-1 min-w-0 w-full aspect-[4/5] rounded-[24px] overflow-hidden bg-placeholder">
         <Image

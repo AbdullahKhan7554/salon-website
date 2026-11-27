@@ -29,7 +29,7 @@ export default function ServicesHero() {
         <>
           Men&apos;s grooming services
           <br />
-          in <em>Dubai</em>
+          in <span>Dubai</span>
         </>
       }
       subtitle="Hair, beard and facial care by an expert barber with 18+ years of experience. Every service is available in our salon or at your home."
