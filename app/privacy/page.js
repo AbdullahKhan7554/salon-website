@@ -1,4 +1,11 @@
 import LegalPage from "@/components/legal/LegalPage";
+import JsonLd, { breadcrumbLd, pageMetadata } from "@/components/JsonLd";
+
+export const metadata = pageMetadata({
+  path: "/privacy",
+  title: "Privacy Policy | Scissors VIP Salon",
+  description: "How Scissors VIP Salon collects, uses and protects your personal data under UAE law.",
+});
 
 const link = "text-accent hover:text-accent-hover";
 
@@ -75,10 +82,13 @@ const SECTIONS = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPage
-      title="Privacy Policy"
-      intro="How Scissors VIP Salon collects, uses and protects your information."
-      sections={SECTIONS}
-    />
+    <>
+      <JsonLd data={breadcrumbLd("Privacy Policy", "/privacy")} />
+      <LegalPage
+        title="Privacy Policy"
+        intro="How Scissors VIP Salon collects, uses and protects your information."
+        sections={SECTIONS}
+      />
+    </>
   );
 }

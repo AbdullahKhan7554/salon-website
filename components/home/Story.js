@@ -26,7 +26,7 @@ export default function Story() {
         </div>
         <div className="flex-[1_1_340px] min-w-0 aspect-[3/4] bg-[#241F1B] overflow-hidden">
           <Image
-            src="/Non.jpg"
+            src="/hammad-founder-scissors-vip-salon.jpg"
             alt="Hammad, founder of Scissors VIP Salon"
             width={1024}
             height={1536}

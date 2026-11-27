@@ -1,4 +1,11 @@
 import LegalPage from "@/components/legal/LegalPage";
+import JsonLd, { breadcrumbLd, pageMetadata } from "@/components/JsonLd";
+
+export const metadata = pageMetadata({
+  path: "/terms",
+  title: "Terms & Conditions | Scissors VIP Salon",
+  description: "Booking, cancellation, pricing and service terms for Scissors VIP Salon, Dubai.",
+});
 
 const SECTIONS = [
   {
@@ -66,10 +73,13 @@ const SECTIONS = [
 
 export default function TermsPage() {
   return (
-    <LegalPage
-      title="Terms & Conditions"
-      intro="These terms apply to the website and services of Scissors VIP Salon, Dubai."
-      sections={SECTIONS}
-    />
+    <>
+      <JsonLd data={breadcrumbLd("Terms & Conditions", "/terms")} />
+      <LegalPage
+        title="Terms & Conditions"
+        intro="These terms apply to the website and services of Scissors VIP Salon, Dubai."
+        sections={SECTIONS}
+      />
+    </>
   );
 }

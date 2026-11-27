@@ -33,7 +33,7 @@ export default function Hero() {
         <figure className="flex-[1_1_380px] min-w-0 m-0 flex flex-col gap-3.5">
           <div className="aspect-[4/5] bg-[#241F1B] overflow-hidden">
             <Image
-              src="/home/front.jpg"
+              src="/home/scissors-vip-salon-dubai.jpg"
               alt="Men's haircut at Scissors VIP Salon, Dubai"
               width={1536}
               height={1024}

@@ -1,4 +1,4 @@
-const FAQS = [
+export const FAQS = [
   {
     q: "What services do you offer?",
     a: "Men's haircuts, beard grooming, facials, hair colouring and home grooming services across Dubai. See the full list on our Services page.",

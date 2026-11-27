@@ -26,7 +26,7 @@ export default function AboutHero() {
         </div>
         <div className="flex-[1_1_380px] min-w-0 aspect-[4/5] bg-[#241F1B] overflow-hidden">
           <Image
-            src="/Non.jpg"
+            src="/hammad-founder-scissors-vip-salon.jpg"
             alt="Hammad, founder of Scissors VIP Salon, at work"
             width={1024}
             height={1536}

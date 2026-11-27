@@ -15,7 +15,7 @@ export default function HomeVisit() {
     >
       <div className="flex-[1_1_420px] min-w-0 aspect-[5/4] bg-placeholder overflow-hidden">
         <Image
-          src="/services/shave.jpg"
+          src="/services/beard-shave-trim.jpg"
           alt="Barber giving a shave during a home grooming visit in Dubai"
           width={736}
           height={920}

@@ -2,10 +2,18 @@ import Link from "next/link";
 import { container } from "@/components/home/constants";
 import BookingForm from "@/components/contact/BookingForm";
 import SalonDetails from "@/components/contact/SalonDetails";
+import JsonLd, { breadcrumbLd, pageMetadata } from "@/components/JsonLd";
+
+export const metadata = pageMetadata({
+  path: "/contact",
+  title: "Book a Men's Haircut in Al Lisaili, Dubai | Scissors VIP",
+  description: "Visit us at Rashid Building, Saih Al Salam Street, Al Lisaili, or book a home visit. Open daily 10 am to 10 pm. Call or WhatsApp +971 50 137 4524.",
+});
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={breadcrumbLd("Contact", "/contact")} />
       <section className={`${container} pt-[clamp(56px,7vw,96px)] pb-[clamp(48px,6vw,72px)]`}>
         <nav aria-label="Breadcrumb" className="text-[13px] text-muted mb-7">
           <Link href="/" className="text-muted hover:text-ink inline-flex items-center min-h-11">

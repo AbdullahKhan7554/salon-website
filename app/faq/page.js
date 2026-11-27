@@ -1,14 +1,33 @@
 import Link from "next/link";
 import { container } from "@/components/home/constants";
-import FaqList from "@/components/faq/FaqList";
+import FaqList, { FAQS } from "@/components/faq/FaqList";
+import JsonLd, { breadcrumbLd, pageMetadata } from "@/components/JsonLd";
+
+export const metadata = pageMetadata({
+  path: "/faq",
+  title: "Men's Salon & Home Barber FAQ | Scissors VIP Salon Dubai",
+  description: "Home service areas, hygiene, booking, walk-ins, haircut time and packages. Answers to the most common questions about Scissors VIP Salon Dubai.",
+});
 
 const ASK_URL = "https://wa.me/971501374524?text=Hi%2C%20I%20have%20a%20question.";
+
+const FAQ_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 export default function FAQPage() {
   return (
     <div
       className={`${container} pt-[clamp(56px,7vw,96px)] pb-[clamp(72px,9vw,128px)] flex flex-wrap gap-[clamp(40px,6vw,96px)]`}
     >
+      <JsonLd data={FAQ_LD} />
+      <JsonLd data={breadcrumbLd("FAQ", "/faq")} />
       <div className="flex-[1_1_320px] min-w-0">
         <nav aria-label="Breadcrumb" className="text-[13px] text-muted mb-7">
           <Link href="/" className="text-muted hover:text-ink inline-flex items-center min-h-11">

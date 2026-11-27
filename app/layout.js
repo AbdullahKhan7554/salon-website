@@ -3,6 +3,7 @@ import { Libre_Baskerville, Lato } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { SITE_URL, OG_DEFAULTS } from "@/components/JsonLd";
 
 // function WhatsAppButton() {
 // ✅ WhatsApp Floating Button with Popup (Improved)
@@ -56,11 +57,12 @@ const sans = Lato({
 });
 
 export const metadata = {
-  title: "VipMensSalon",
-  description: "VIPSCISSORS",
-    icons: {
-    icon: "/Favicon.svg", 
+  metadataBase: new URL(SITE_URL),
+  title: "Scissors VIP Salon",
+  icons: {
+    icon: "/Favicon.svg",
   },
+  openGraph: OG_DEFAULTS,
 };
 
 
