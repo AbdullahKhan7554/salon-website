@@ -1,5 +1,5 @@
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Libre_Baskerville, Lato } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -40,14 +40,19 @@ function WhatsAppButton() {
 
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const serif = Libre_Baskerville({
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
+  variable: "--font-libre-baskerville",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sans = Lato({
+  weight: ["400", "700"],
   subsets: ["latin"],
+  variable: "--font-lato",
+  display: "swap",
 });
 
 export const metadata = {
@@ -61,9 +66,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`antialiased flex flex-col min-h-screen`}
       >
         <Navbar />
         <main className="flex-grow">

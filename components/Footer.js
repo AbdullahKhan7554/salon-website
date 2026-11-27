@@ -1,91 +1,103 @@
-
-
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
 
-const Footer = () => {
+const BOOK_URL =
+  "https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon.";
+
+const LINKS = [
+  { href: "/services", label: "Services" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/terms", label: "Terms" },
+  { href: "/privacy", label: "Privacy" },
+];
+
+const label = "text-xs tracking-[0.2em] uppercase text-ink-muted/80 mb-2.5";
+const link = "no-underline inline-flex items-center min-h-11 hover:text-bone";
+
+export default function Footer() {
   return (
-    <footer className="w-full bg-black text-white py-10 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-        {/* Logo & Pages Section */}
-        <div className="flex flex-col items-center md:items-start md:flex-row md:gap-6">
-          <div className="w-24 h-24 flex-shrink-0">
-            <img
-              src="/logo.jpg.svg"
-              alt="Salon Logo"
-              className="w-full h-full object-contain"
-            />
+    <footer className="bg-ink text-ink-muted text-[15px] leading-[1.7]">
+      <div className="max-w-[1280px] mx-auto px-7 pt-[72px] pb-10">
+        <div className="flex flex-wrap justify-between items-end gap-6 pb-12 border-b border-ink-line">
+          <p className="m-0 font-serif text-[clamp(36px,4.4vw,60px)] leading-none text-bone">
+            Your chair is waiting.
+          </p>
+          <a
+            href={BOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-accent hover:bg-accent-hover text-bone no-underline px-7 py-[18px] min-h-14 box-border inline-flex items-center gap-3"
+          >
+            Book on WhatsApp <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-10 py-12">
+          <address className="not-italic">
+            <div className={label}>Visit</div>
+            <span className="text-bone">Scissors VIP Salon</span>
+            <br />
+            Rashid Building, Saih Al Salam Street
+            <br />
+            Al Lisaili, Dubai, UAE
+          </address>
+
+          <div>
+            <div className={label}>Hours</div>
+            <span className="text-bone">Monday – Sunday</span>
+            <br />
+            10:00 am – 10:00 pm
           </div>
-          <div className="text-center md:text-left">
-            <div className="text-2xl font-bold tracking-wide underline underline-offset-4 mb-4">
-              SCISSORS VIP SALON
+
+          <div className="flex flex-col items-start">
+            <div className={label}>Contact</div>
+            <a href="tel:+971501374524" className={`${link} text-bone`}>
+              +971 50 137 4524
+            </a>
+            <a href="mailto:scissorsvipsalon@gmail.com" className={`${link} text-ink-text`}>
+              scissorsvipsalon@gmail.com
+            </a>
+            <a
+              href="https://www.instagram.com/scissorsvipsaloon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${link} text-ink-text`}
+            >
+              Instagram
+            </a>
+          </div>
+
+          <nav aria-label="Footer">
+            <div className={label}>Explore</div>
+            <div className="grid grid-cols-2 gap-x-4">
+              {LINKS.map(({ href, label: text }) => (
+                <Link key={href} href={href} className={`${link} text-ink-text`}>
+                  {text}
+                </Link>
+              ))}
             </div>
-            <h3 className="font-bold text-lg mb-2">Pages</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
-              <li><Link href="/term" className="hover:text-white">Terms&conditions</Link></li>
-              <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
-              <li><Link href="/about" className="hover:text-white">About Us</Link></li>
-            </ul>
-          </div>
+          </nav>
         </div>
 
-        {/* Navigation Links */}
-        <div className="text-center md:text-left">
-          <h3 className="font-bold text-lg mb-4">Navigation</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li><Link href="/home" className="hover:text-white">Home</Link></li>
-            <li><Link href="/services1" className="hover:text-white">Services</Link></li>
-            <li><Link href="/pricing1" className="hover:text-white">Pricing</Link></li>
-            <li><Link href="/about" className="hover:text-white">About Us</Link></li>
-            <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-          </ul>
-        </div>
-
-        {/* Social + Location */}
-        <div className="text-center md:text-left">
-          <h3 className="font-bold text-lg mb-4">Find & Follow Us</h3>
-          <div className="flex justify-center md:justify-start gap-5 text-xl mb-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500"><FaFacebook /></a>
-            <a href="https://www.instagram.com/scissorsvipsaloon?igsh=MWl5cHJhZDYzZHk4cQ%3D%3D" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400"><FaInstagram /></a>
-          </div>
-
-          {/* Google Map Embed */}
-          <div className="w-full h-40 rounded overflow-hidden border border-gray-600">
-            <iframe
-              title="Our Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.4240343378237!2d55.4767034!3d24.9359022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f7f89fe433ac3%3A0x2e7b4082fdcd7b9e!2sScissors%20vip%20mens%20saloon!5e0!3m2!1sen!2sae!4v1719400000000!5m2!1sen!2sae" width="100%" height="100%" style={{ border: 0 }}  allowFullScreen=""  loading="lazy"  referrerPolicy="no-referrer-when-downgrade" />
-          </div>
-        </div>
-      </div>
-
-      <p className="text-center text-gray-400 text-sm mt-10">
-        © {new Date().getFullYear()} Salon. All rights reserved.
-      </p>
-
-      {/* Avenix Studio Credit */}
-      <div className="mt-8 pt-6 border-t border-gray-800 flex justify-center">
-        <a
-          href="https://www.avenixstudios.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2.5 text-gray-400 transition-all duration-300 ease-in-out hover:scale-[1.03] hover:text-[#D4AF37]"
-        >
-          <img
-            src="/avenix-logo.png"
-            alt="Avenix Studio Logo"
-            className="w-6 h-6 object-contain"
-          />
-          <span className="text-xs sm:text-sm font-medium tracking-wide">
-            Designed &amp; Developed by Avenix Studio
+        <div className="flex flex-wrap justify-between items-center gap-3 text-[13px] pt-6 border-t border-ink-line">
+          <span>© 2026 Scissors VIP Salon. All rights reserved.</span>
+          <span className="inline-flex items-center gap-2">
+            Designed &amp; developed by
+            <a
+              href="https://www.avenixstudios.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${link} gap-2 text-ink-text`}
+            >
+              <Image src="/avenix-logo.png" alt="" width={20} height={20} className="w-5 h-5 object-contain" />
+              Avenix Studio
+            </a>
           </span>
-        </a>
+        </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
-
+}
