@@ -11,8 +11,9 @@ export const HERO_MEDIA = {
 
 /**
  * Full-bleed hero with a muted looping background video.
- * The poster is rendered with next/image (priority) underneath the video, so the
- * LCP element is a fast optimised image and the video never shifts layout.
+ * The poster is rendered with next/image (priority) underneath the video instead of
+ * the <video poster> attribute, so the LCP element is the optimised image (a poster
+ * attribute makes the video itself the LCP candidate) and the video never shifts layout.
  */
 export default function PageHero({
   media,
@@ -38,7 +39,6 @@ export default function PageHero({
         playsInline
         preload="metadata"
         aria-hidden="true"
-        poster={media.poster}
       >
         <source src={media.video} type="video/mp4" />
       </video>

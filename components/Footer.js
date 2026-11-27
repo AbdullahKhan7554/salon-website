@@ -21,7 +21,7 @@ const link = "no-underline inline-flex items-center min-h-11 hover:text-bone";
 export default function Footer() {
   return (
     <footer className="bg-ink text-ink-muted text-[15px] leading-[1.7]">
-      <Container className="pt-section pb-10">
+      <Container className="pt-section pb-24">
         <div className="flex flex-wrap justify-between items-end gap-6 pb-12 border-b border-ink-line">
           <p className="m-0 font-serif text-h2 text-bone">
             Your chair is waiting.
