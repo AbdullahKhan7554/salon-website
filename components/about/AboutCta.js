@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Container from "@/components/Container";
+import Button from "@/components/ui/Button";
 
 export default function AboutCta() {
   return (
@@ -8,18 +8,10 @@ export default function AboutCta() {
         Be part of the story. Book your first <em className="text-accent">VIP</em> cut.
       </p>
       <div className="flex flex-wrap gap-x-8 gap-y-5 items-center">
-        <Link
-          href="/services"
-          className="text-accent hover:text-accent-hover text-[15px] border-b border-accent pt-3 pb-1 min-h-11 box-border inline-flex items-end"
-        >
-          Our services →
-        </Link>
-        <Link
-          href="/contact"
-          className="bg-accent hover:bg-accent-hover text-bone px-[30px] py-[18px] min-h-14 box-border inline-flex items-center text-[15px]"
-        >
-          Book now
-        </Link>
+        <Button href="/services" variant="link" arrow>
+          Our services
+        </Button>
+        <Button href="/contact">Book now</Button>
       </div>
     </Container>
   );

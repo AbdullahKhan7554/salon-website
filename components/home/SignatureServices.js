@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 import { sectionTitle } from "./constants";
 import Container from "@/components/Container";
 
@@ -20,12 +20,9 @@ export default function SignatureServices() {
             Signature services
           </h2>
           <p className="mt-5 mb-7 text-muted max-w-[300px]">Hair, beard and facial care. Prices include 5% VAT.</p>
-          <Link
-            href="/pricing"
-            className="text-accent hover:text-accent-hover text-[15px] border-b border-accent pt-3 pb-1 min-h-11 box-border inline-flex items-end"
-          >
-            See the full price list →
-          </Link>
+          <Button href="/pricing" variant="link" arrow>
+            See the full price list
+          </Button>
         </div>
         <div className="flex-[3_1_560px] min-w-0">
           {MENU.map((s) => (

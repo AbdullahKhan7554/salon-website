@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
+import Button from "@/components/ui/Button";
 
 const BOOK_URL =
   "https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon.";
@@ -26,14 +27,9 @@ export default function Footer() {
           <p className="m-0 font-serif text-h2 text-bone">
             Your chair is waiting.
           </p>
-          <a
-            href={BOOK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-accent hover:bg-accent-hover text-bone no-underline px-7 py-[18px] min-h-14 box-border inline-flex items-center gap-3"
-          >
-            Book on WhatsApp <span aria-hidden="true">→</span>
-          </a>
+          <Button href={BOOK_URL} tone="dark" arrow>
+            Book on WhatsApp
+          </Button>
         </div>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-10 py-12">

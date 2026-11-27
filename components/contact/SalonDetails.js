@@ -1,3 +1,5 @@
+import Button from "@/components/ui/Button";
+
 const MAP_EMBED =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.4240343378237!2d55.4767034!3d24.9359022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f7f89fe433ac3%3A0x2e7b4082fdcd7b9e!2sScissors%20vip%20mens%20saloon!5e0!3m2!1sen!2sae!4v1719400000000!5m2!1sen!2sae";
 const DIRECTIONS = "https://www.google.com/maps/search/?api=1&query=24.9359022,55.4767034";
@@ -47,14 +49,9 @@ export default function SalonDetails() {
           allowFullScreen
         />
       </div>
-      <a
-        href={DIRECTIONS}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${accentLink} text-[15px] border-b border-accent pt-3 pb-1 min-h-11 box-border inline-flex items-end self-start`}
-      >
-        Get directions →
-      </a>
+      <Button href={DIRECTIONS} variant="link" arrow className="self-start">
+        Get directions
+      </Button>
     </aside>
   );
 }

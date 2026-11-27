@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PRICE_GROUPS } from "@/components/pricing/data";
+import Button from "@/components/ui/Button";
 
 const WHATSAPP = "https://wa.me/971501374524";
 
@@ -115,12 +116,9 @@ export default function BookingForm() {
       </label>
 
       <div className="flex flex-wrap gap-x-7 gap-y-4 items-center mt-2">
-        <button
-          type="submit"
-          className="bg-accent hover:bg-accent-hover text-bone border-0 px-[30px] py-[18px] min-h-14 text-[15px] font-medium cursor-pointer"
-        >
-          Send on WhatsApp →
-        </button>
+        <Button type="submit" arrow>
+          Send on WhatsApp
+        </Button>
         <span className="text-sm text-muted">
           Or call{" "}
           <a href="tel:+971501374524" className="text-accent hover:text-accent-hover inline-flex items-center min-h-11">

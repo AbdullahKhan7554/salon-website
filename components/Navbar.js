@@ -6,11 +6,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container, { containerClass } from "@/components/Container";
 import s from "@/components/navbar/Navbar.module.css";
+import Button from "@/components/ui/Button";
 
 const BOOK_URL =
   "https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon.";
 
 const LINKS = [
+  { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
@@ -34,7 +36,7 @@ export default function Navbar() {
   const wasOpen = useRef(false);
 
   const close = useCallback(() => setIsOpen(false), []);
-  const isActive = (href) => pathname === href || pathname.startsWith(`${href}/`);
+  const isActive = (href) => (href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`));
   const overHero = HERO_ROUTES.includes(pathname);
 
   // Close on route change.
@@ -107,9 +109,9 @@ export default function Navbar() {
               );
             })}
             <li className={`${s.ctaItem} ${rowCls}`}>
-              <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className={s.cta} onClick={onLinkClick}>
+              <Button href={BOOK_URL} tone="dark" className="max-lg:w-full max-lg:mt-8" onClick={onLinkClick}>
                 Book now
-              </a>
+              </Button>
             </li>
           </ul>
 

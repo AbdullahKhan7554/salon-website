@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Container from "@/components/Container";
+import Button from "@/components/ui/Button";
 
 export const metadata = {
   title: { absolute: "Page not found | Scissors VIP Salon" },
@@ -29,23 +29,15 @@ export default function NotFound() {
         <ul className="m-0 p-0 list-none flex flex-wrap gap-x-8 gap-y-2 mb-10">
           {LINKS.map((l) => (
             <li key={l.href}>
-              <Link
-                href={l.href}
-                className="text-accent hover:text-accent-hover text-[15px] border-b border-accent pt-3 pb-1 min-h-11 box-border inline-flex items-end"
-              >
+              <Button href={l.href} variant="link">
                 {l.label}
-              </Link>
+              </Button>
             </li>
           ))}
         </ul>
-        <a
-          href={BOOK_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-accent hover:bg-accent-hover text-bone px-[30px] py-[18px] min-h-14 box-border inline-flex items-center gap-3 text-[15px] font-medium"
-        >
-          Book on WhatsApp <span aria-hidden="true">→</span>
-        </a>
+        <Button href={BOOK_URL} arrow>
+          Book on WhatsApp
+        </Button>
       </Container>
     </div>
   );

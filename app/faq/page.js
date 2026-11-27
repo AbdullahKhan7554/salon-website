@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import Button from "@/components/ui/Button";
 import PageHero, { HERO_MEDIA } from "@/components/PageHero";
 import FaqList, { FAQS } from "@/components/faq/FaqList";
 import JsonLd, { breadcrumbLd, pageMetadata } from "@/components/JsonLd";
@@ -36,14 +37,9 @@ export default function FAQPage() {
         }
         subtitle="Everything about our salon, home visits and booking. Still unsure? Message us."
         actions={
-          <a
-            href={ASK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-accent hover:bg-accent-hover text-bone px-[26px] py-4 min-h-[52px] box-border inline-flex items-center gap-2.5 text-[15px]"
-          >
-            Ask on WhatsApp <span aria-hidden="true">→</span>
-          </a>
+          <Button href={ASK_URL} arrow>
+            Ask on WhatsApp
+          </Button>
         }
       />
       <Container as="section" aria-label="Frequently asked questions" className="py-section">

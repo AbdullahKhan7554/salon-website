@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import Button from "@/components/ui/Button";
 import { HOME_VISIT_URL } from "./data";
 
 export default function HomeVisitBand() {
@@ -17,14 +18,9 @@ export default function HomeVisitBand() {
             confirm the visit.
           </p>
         </div>
-        <a
-          href={HOME_VISIT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-accent hover:bg-accent-hover text-bone px-[30px] py-[18px] min-h-14 box-border inline-flex items-center gap-3 text-[15px]"
-        >
-          Book a home visit <span aria-hidden="true">→</span>
-        </a>
+        <Button href={HOME_VISIT_URL} tone="dark" arrow>
+          Book a home visit
+        </Button>
       </Container>
     </section>
   );

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 import PageHero, { HERO_MEDIA } from "@/components/PageHero";
 import { BOOK_URL } from "./constants";
 
@@ -17,20 +17,12 @@ export default function Hero() {
       }
       actions={
         <>
-          <a
-            href={BOOK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-accent hover:bg-accent-hover text-bone px-[30px] py-[18px] min-h-14 box-border inline-flex items-center gap-3 text-[15px] font-medium"
-          >
-            Book on WhatsApp <span aria-hidden="true">→</span>
-          </a>
-          <Link
-            href="/pricing"
-            className="text-bone text-[15px] border-b border-bone/60 hover:border-bone pt-3 pb-1 min-h-11 box-border inline-flex items-end"
-          >
+          <Button href={BOOK_URL} tone="dark" arrow>
+            Book on WhatsApp
+          </Button>
+          <Button href="/pricing" variant="link" tone="dark">
             Haircut from AED 80
-          </Link>
+          </Button>
         </>
       }
     />

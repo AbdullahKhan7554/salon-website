@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 import { eyebrow } from "./constants";
 import Container from "@/components/Container";
 
@@ -18,12 +18,9 @@ export default function Story() {
             Nearly two decades ago, Hammad, known to his clients as Ahmad, started shaping cuts and confidence. Clients
             kept coming back for the precision and the VIP treatment, and that loyalty became Scissors VIP Salon.
           </p>
-          <Link
-            href="/about"
-            className="mt-8 text-bone border-b border-ink-border pt-3 pb-1 min-h-11 box-border inline-flex items-end"
-          >
-            Read our story →
-          </Link>
+          <Button href="/about" variant="link" tone="dark" arrow className="mt-8">
+            Read our story
+          </Button>
         </div>
         <div className="flex-[1_1_340px] min-w-0 aspect-[3/4] bg-ink-raised overflow-hidden">
           <Image
