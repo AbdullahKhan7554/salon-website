@@ -49,7 +49,7 @@ export default function SalonDetails() {
           allowFullScreen
         />
       </div>
-      <Button href={DIRECTIONS} variant="link" arrow className="self-start">
+      <Button href={DIRECTIONS} variant="primary" arrow className="self-start">
         Get directions
       </Button>
     </aside>

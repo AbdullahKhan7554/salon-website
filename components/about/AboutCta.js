@@ -8,7 +8,7 @@ export default function AboutCta() {
         Be part of the story. Book your first <em className="text-accent">VIP</em> cut.
       </p>
       <div className="flex flex-wrap gap-x-8 gap-y-5 items-center">
-        <Button href="/services" variant="link" arrow>
+        <Button href="/services" variant="secondary" arrow>
           Our services
         </Button>
         <Button href="/contact">Book now</Button>

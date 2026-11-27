@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Preloader, { PRELOAD_KEY } from "@/components/Preloader";
+import Preloader from "@/components/Preloader";
 import { SITE_URL, OG_DEFAULTS } from "@/components/JsonLd";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -58,16 +58,17 @@ export const metadata = {
 };
 
 
-// Runs before first paint: skip the preloader on repeat visits in this session,
-// otherwise lock scroll while it shows.
-const PRELOAD_SCRIPT = `try{document.documentElement.classList.add(sessionStorage.getItem("${PRELOAD_KEY}")?"svip-no-preload":"svip-preloading")}catch(e){document.documentElement.classList.add("svip-preloading")}`;
+// Runs before first paint. Injects a style tag (React leaves it alone, unlike classes on
+// <html>, which hydration resets): repeat visit in this session -> hide the preloader,
+// first visit -> lock scroll while it shows. Preloader.js removes the tag when it is done.
+// The key must match PRELOAD_KEY in components/Preloader.js.
+const PRELOAD_SCRIPT = `(function(){var skip=false;try{skip=sessionStorage.getItem("svip-preloaded")==="1"}catch(e){}var s=document.createElement("style");s.id="svip-preload-style";s.dataset.state=skip?"skip":"show";s.textContent=skip?".svip-preloader{display:none!important}":"html,body{overflow:hidden!important}";document.head.appendChild(s)})()`;
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${heading.variable} ${body.variable} ${label.variable}`}
-      suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: PRELOAD_SCRIPT }} />

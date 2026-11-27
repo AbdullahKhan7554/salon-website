@@ -8,7 +8,7 @@ export default function ServicesCta() {
         <p className="m-0 font-heading text-h2 max-w-[640px]">
           Prefer it at home? Every service is available as a <em className="text-accent">home visit</em> across Dubai.
         </p>
-        <Button href="/pricing" variant="link" arrow>
+        <Button href="/pricing" variant="primary" arrow>
           View full price list
         </Button>
       </div>

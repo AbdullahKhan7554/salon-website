@@ -112,11 +112,6 @@ body {
 
 
 /* Logo preloader (components/Preloader.js) */
-html.svip-preloading,
-html.svip-preloading body {
-  overflow: hidden;
-}
-
 .svip-preloader {
   position: fixed;
   inset: 0;
@@ -129,10 +124,6 @@ html.svip-preloading body {
   transition: opacity 400ms ease;
   /* Failsafe: if JavaScript never runs, the overlay still gets out of the way. */
   animation: svip-preloader-failsafe 0s linear 4s forwards;
-}
-
-html.svip-no-preload .svip-preloader {
-  display: none;
 }
 
 .svip-preloader.is-hiding {

@@ -18,7 +18,7 @@ export default function Story() {
             Nearly two decades ago, Hammad, known to his clients as Ahmad, started shaping cuts and confidence. Clients
             kept coming back for the precision and the VIP treatment, and that loyalty became Scissors VIP Salon.
           </p>
-          <Button href="/about" variant="link" tone="dark" arrow className="mt-8">
+          <Button href="/about" variant="primary" tone="dark" arrow className="mt-8">
             Read our story
           </Button>
         </div>

@@ -29,7 +29,7 @@ export default function NotFound() {
         <ul className="m-0 p-0 list-none flex flex-wrap gap-x-8 gap-y-2 mb-10">
           {LINKS.map((l) => (
             <li key={l.href}>
-              <Button href={l.href} variant="link">
+              <Button href={l.href} variant="secondary">
                 {l.label}
               </Button>
             </li>

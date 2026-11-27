@@ -20,7 +20,7 @@ export default function Hero() {
           <Button href={BOOK_URL} tone="dark" arrow>
             Book on WhatsApp
           </Button>
-          <Button href="/pricing" variant="link" tone="dark">
+          <Button href="/pricing" variant="secondary" tone="dark">
             Haircut from AED 80
           </Button>
         </>

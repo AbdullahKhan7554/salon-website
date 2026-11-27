@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const base =
-  "group inline-flex items-center justify-center gap-[10px] whitespace-nowrap rounded-full font-sans font-medium tracking-[0.02em] no-underline cursor-pointer box-border transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2";
+  "group inline-flex items-center justify-center gap-[10px] whitespace-nowrap rounded-full font-sans font-medium tracking-[0.02em] no-underline cursor-pointer box-border transition-[color,background-color,border-color,box-shadow,transform] duration-200 ease-[ease] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 motion-reduce:transition-colors motion-reduce:hover:translate-none motion-reduce:active:scale-none";
 
 const sizes = {
   md: "h-[52px] text-[15px]",
@@ -11,13 +11,14 @@ const sizes = {
 
 // tone="dark" is for buttons sitting on an ink background.
 const variants = {
-  primary: () => "px-7 border-0 bg-accent text-bone hover:bg-accent-hover",
+  primary: () =>
+    "px-7 border-0 bg-accent text-bone hover:bg-accent-hover hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(140,47,31,0.35)]",
   secondary: (dark) =>
-    `px-7 border border-current bg-transparent ${
-      dark ? "text-bone hover:bg-bone hover:text-ink" : "text-ink hover:bg-ink hover:text-bone"
+    `px-7 border bg-transparent hover:-translate-y-0.5 ${
+      dark
+        ? "border-bone text-bone hover:bg-bone hover:text-ink"
+        : "border-ink text-ink hover:bg-ink hover:text-bone"
     }`,
-  link: (dark) =>
-    `px-0 border-0 bg-transparent ${dark ? "text-bone hover:text-bone/80" : "text-accent hover:text-accent-hover"}`,
 };
 
 /**
@@ -36,13 +37,13 @@ export default function Button({
   ...rest
 }) {
   const dark = tone === "dark";
-  const cls = `${base} ${sizes[size] ?? sizes.md} ${variants[variant](dark)} ${
+  const cls = `${base} ${sizes[size] ?? sizes.md} ${(variants[variant] ?? variants.primary)(dark)} ${
     dark ? "focus-visible:ring-offset-ink" : "focus-visible:ring-offset-bone"
   } ${className}`.trim();
 
   const content = (
     <>
-      {variant === "link" ? <span className="border-b border-current pb-0.5">{children}</span> : children}
+      {children}
       {arrow && (
         <ArrowRight
           aria-hidden="true"

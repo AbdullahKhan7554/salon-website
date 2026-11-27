@@ -3,39 +3,44 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export const PRELOAD_KEY = "svip-preloaded";
-const MAX_MS = 1500;
+// Keep in sync with PRELOAD_SCRIPT in app/layout.js (a server file cannot import
+// plain values from a "use client" module: it receives a client reference instead).
+const PRELOAD_KEY = "svip-preloaded";
+const MIN_MS = 1200; // shortest time the logo stays up, counted from navigation start
+const MAX_MS = 1500; // never hold the page longer than this, even if "load" is late
 const FADE_MS = 400;
 
 /**
- * First-visit logo overlay. It is server-rendered so it covers the first paint; the page
- * renders underneath the whole time. An inline <head> script (see app/layout.js) adds
- * `svip-no-preload` to <html> on repeat visits in the session, which hides it before paint.
+ * First-visit logo overlay. Always server-rendered so it covers the first paint; the page
+ * renders underneath the whole time. On repeat visits in the session the inline <head>
+ * script in app/layout.js injects a style that hides it before paint.
  */
 export default function Preloader() {
   const [hiding, setHiding] = useState(false);
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
-    const root = document.documentElement;
+    const lock = document.getElementById("svip-preload-style");
     const finish = () => {
-      root.classList.remove("svip-preloading");
+      lock?.remove();
       setGone(true);
     };
 
-    if (root.classList.contains("svip-no-preload")) {
+    let seen = false;
+    try {
+      seen = sessionStorage.getItem(PRELOAD_KEY) === "1" && lock?.dataset.state === "skip";
+      sessionStorage.setItem(PRELOAD_KEY, "1");
+    } catch {
+      // Storage blocked: show it, it simply appears again next visit.
+    }
+    if (seen) {
       finish();
       return;
     }
 
-    try {
-      sessionStorage.setItem(PRELOAD_KEY, "1");
-    } catch {
-      // Storage blocked: the overlay simply shows again next time.
-    }
-
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let fadeTimer;
+    let minTimer;
     let done = false;
 
     const hide = () => {
@@ -49,14 +54,21 @@ export default function Preloader() {
       fadeTimer = window.setTimeout(finish, FADE_MS);
     };
 
-    const maxTimer = window.setTimeout(hide, MAX_MS);
-    if (document.readyState === "complete") hide();
-    else window.addEventListener("load", hide, { once: true });
+    // Reduced motion: no minimum, hide as soon as the page has loaded.
+    const onLoad = () => {
+      const wait = reduced ? 0 : Math.max(0, MIN_MS - performance.now());
+      minTimer = window.setTimeout(hide, wait);
+    };
+
+    const maxTimer = window.setTimeout(hide, Math.max(0, MAX_MS - performance.now()));
+    if (document.readyState === "complete") onLoad();
+    else window.addEventListener("load", onLoad, { once: true });
 
     return () => {
       window.clearTimeout(maxTimer);
+      window.clearTimeout(minTimer);
       window.clearTimeout(fadeTimer);
-      window.removeEventListener("load", hide);
+      window.removeEventListener("load", onLoad);
     };
   }, []);
 

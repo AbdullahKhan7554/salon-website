@@ -20,7 +20,7 @@ export default function SignatureServices() {
             Signature services
           </h2>
           <p className="mt-5 mb-7 text-muted max-w-[300px]">Hair, beard and facial care. Prices include 5% VAT.</p>
-          <Button href="/pricing" variant="link" arrow>
+          <Button href="/pricing" variant="primary" arrow>
             See the full price list
           </Button>
         </div>
