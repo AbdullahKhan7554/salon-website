@@ -9,12 +9,13 @@ const WHATSAPP = "https://wa.me/971501374524";
 const SERVICES = PRICE_GROUPS.flatMap((g) => g.items.map((i) => `${i.name} — ${i.price} AED`));
 
 const labelCls = "flex flex-col gap-2 text-sm font-medium";
-const fieldCls =
-  "w-full rounded-none font-normal text-base py-3.5 border-0 border-b border-ink-muted bg-transparent min-h-12 focus:outline-none focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+const fieldBase =
+  "w-full box-border font-normal text-base text-ink bg-[var(--bone)] border border-[var(--line)] rounded-[12px] px-4 transition-[border-color,box-shadow] duration-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/25";
+const fieldCls = `${fieldBase} h-[52px]`;
 
 function toggleCls(on) {
-  return `text-[15px] px-[22px] py-3 min-h-12 cursor-pointer border ${
-    on ? "bg-ink text-bone border-ink" : "bg-transparent text-ink border-ink-muted hover:border-ink"
+  return `flex-1 sm:flex-none rounded-full text-[15px] font-medium px-6 h-11 cursor-pointer border-0 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+    on ? "bg-ink text-bone" : "bg-transparent text-ink hover:bg-ink/5"
   }`;
 }
 
@@ -54,11 +55,16 @@ export default function BookingForm() {
     <form
       aria-label="Booking request"
       onSubmit={handleSubmit}
-      className="flex-[3_1_520px] min-w-0 flex flex-col gap-[22px] pt-8 border-t border-ink"
+      className="flex-[3_1_520px] min-w-0 box-border flex flex-col gap-[22px] bg-white border border-[var(--line)] rounded-[24px] p-[clamp(24px,4vw,48px)] shadow-[0_20px_60px_rgba(22,19,17,0.08)]"
     >
+      <div>
+        <h2 className="m-0 font-serif font-normal text-[32px] leading-[1.15]">Request a booking</h2>
+        <p className="mt-2 mb-0 text-muted text-[15px]">We reply on WhatsApp within minutes.</p>
+      </div>
+
       <fieldset className="border-0 m-0 p-0">
         <legend className="text-label text-muted mb-3">Where</legend>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex sm:inline-flex gap-1 p-1 rounded-full border border-[var(--line)] bg-[var(--bone)]">
           <button type="button" aria-pressed={!isHome} onClick={() => setWhere("salon")} className={toggleCls(!isHome)}>
             In the salon
           </button>
@@ -83,7 +89,7 @@ export default function BookingForm() {
             <select
               name="service"
               defaultValue=""
-              className={`${fieldCls} w-full appearance-none rounded-none pr-8 cursor-pointer`}
+              className={`${fieldCls} appearance-none pr-10 cursor-pointer`}
             >
               <option value="">Not sure yet</option>
               {SERVICES.map((s) => (
@@ -92,7 +98,7 @@ export default function BookingForm() {
                 </option>
               ))}
             </select>
-            <span aria-hidden="true" className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-muted">
+            <span aria-hidden="true" className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-muted">
               ▾
             </span>
           </span>
@@ -112,11 +118,11 @@ export default function BookingForm() {
 
       <label className={labelCls}>
         Message (optional)
-        <textarea name="message" rows={3} className={`${fieldCls} resize-y`} />
+        <textarea name="message" rows={3} className={`${fieldBase} h-[120px] py-3 resize-y`} />
       </label>
 
       <div className="flex flex-wrap gap-x-7 gap-y-4 items-center mt-2">
-        <Button type="submit" arrow>
+        <Button type="submit" variant="primary" size="lg" arrow className="w-full sm:w-auto">
           Send on WhatsApp
         </Button>
         <span className="text-sm text-muted">
