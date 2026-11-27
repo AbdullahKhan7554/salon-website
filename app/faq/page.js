@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Container from "@/components/Container";
+import PageHero, { HERO_MEDIA } from "@/components/PageHero";
 import FaqList, { FAQS } from "@/components/faq/FaqList";
 import JsonLd, { breadcrumbLd, pageMetadata } from "@/components/JsonLd";
 
@@ -23,32 +23,32 @@ const FAQ_LD = {
 
 export default function FAQPage() {
   return (
-    <Container className="pt-section pb-section flex flex-wrap gap-[clamp(40px,6vw,96px)]">
+    <>
       <JsonLd data={FAQ_LD} />
       <JsonLd data={breadcrumbLd("FAQ", "/faq")} />
-      <div className="flex-[1_1_320px] min-w-0">
-        <nav aria-label="Breadcrumb" className="text-[13px] text-muted mb-7">
-          <Link href="/" className="text-muted hover:text-ink inline-flex items-center min-h-11">
-            Home
-          </Link>{" "}
-          / <span className="text-ink" aria-current="page">FAQ</span>
-        </nav>
-        <h1 className="m-0 font-serif font-normal text-display tracking-[-0.02em]">
-          Questions, <em className="text-accent">answered.</em>
-        </h1>
-        <p className="mt-6 mb-8 text-muted text-body max-w-[340px]">
-          Everything about our salon, home visits and booking. Still unsure? Message us.
-        </p>
-        <a
-          href={ASK_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-accent hover:bg-accent-hover text-bone px-[26px] py-4 min-h-[52px] box-border inline-flex items-center gap-2.5 text-[15px]"
-        >
-          Ask on WhatsApp <span aria-hidden="true">→</span>
-        </a>
-      </div>
-      <FaqList />
-    </Container>
+      <PageHero
+        media={HERO_MEDIA.salon}
+        crumb="FAQ"
+        title={
+          <>
+            Questions, <em>answered.</em>
+          </>
+        }
+        subtitle="Everything about our salon, home visits and booking. Still unsure? Message us."
+        actions={
+          <a
+            href={ASK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-accent hover:bg-accent-hover text-bone px-[26px] py-4 min-h-[52px] box-border inline-flex items-center gap-2.5 text-[15px]"
+          >
+            Ask on WhatsApp <span aria-hidden="true">→</span>
+          </a>
+        }
+      />
+      <Container as="section" aria-label="Frequently asked questions" className="py-section">
+        <FaqList />
+      </Container>
+    </>
   );
 }
