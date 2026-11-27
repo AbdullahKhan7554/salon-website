@@ -1,8 +1,57 @@
 @import "tailwindcss";
 
-@import 'swiper/css';
-@import 'swiper/css/autoplay';
-@import 'swiper/css/pagination';
+
+:root {
+  --bone: #EFE8DC;
+  --ink: #161311;
+  --accent: #8C2F1F;
+  --accent-hover: #6E2215;
+  --line: #CFC6B8;
+  --muted: #5E554B;
+  --ink-muted: #A69C8E;
+  --ink-text: #CFC6B8;
+  --ink-line: #2B2622;
+  --placeholder: #DDD3C3;
+  --accent-soft: #D9B9A8;
+  --ink-raised: #241F1B;
+  --ink-border: #6B6258;
+  --ink-rule: #4A433B;
+  --ink-body: #2C2622;
+}
+
+@theme inline {
+  --color-bone: var(--bone);
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-text: var(--ink-text);
+  --color-ink-line: var(--ink-line);
+  --color-placeholder: var(--placeholder);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink-raised: var(--ink-raised);
+  --color-ink-border: var(--ink-border);
+  --color-ink-rule: var(--ink-rule);
+  --color-ink-body: var(--ink-body);
+  --font-serif: var(--font-libre-baskerville), Georgia, serif;
+  --font-sans: var(--font-lato), system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bone);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+  font-family: var(--font-lato), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-libre-baskerville), Georgia, serif;
+  font-weight: 400;
+}
 
 
 /* :root {

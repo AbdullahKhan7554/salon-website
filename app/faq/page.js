@@ -1,101 +1,56 @@
+import Link from "next/link";
+import { container } from "@/components/home/constants";
+import FaqList, { FAQS } from "@/components/faq/FaqList";
+import JsonLd, { breadcrumbLd, pageMetadata } from "@/components/JsonLd";
 
+export const metadata = pageMetadata({
+  path: "/faq",
+  title: "Men's Salon & Home Barber FAQ | Scissors VIP Salon Dubai",
+  description: "Home service areas, hygiene, booking, walk-ins, haircut time and packages. Answers to the most common questions about Scissors VIP Salon Dubai.",
+});
+
+const ASK_URL = "https://wa.me/971501374524?text=Hi%2C%20I%20have%20a%20question.";
+
+const FAQ_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 export default function FAQPage() {
   return (
-    <div className="max-w-3xl mx-auto py-32 px-4">
-      <h1 className="text-3xl font-bold mb-6 underline underline-offset-4">
-        Frequently Asked Questions
-      </h1>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">1. What services do you offer?</h2>
-        <p>
-          We offer men&apos;s haircuts, beard grooming, facials, hair coloring, and
-          home services across Dubai.
+    <div
+      className={`${container} pt-[clamp(56px,7vw,96px)] pb-[clamp(72px,9vw,128px)] flex flex-wrap gap-[clamp(40px,6vw,96px)]`}
+    >
+      <JsonLd data={FAQ_LD} />
+      <JsonLd data={breadcrumbLd("FAQ", "/faq")} />
+      <div className="flex-[1_1_320px] min-w-0">
+        <nav aria-label="Breadcrumb" className="text-[13px] text-muted mb-7">
+          <Link href="/" className="text-muted hover:text-ink inline-flex items-center min-h-11">
+            Home
+          </Link>{" "}
+          / <span className="text-ink" aria-current="page">FAQ</span>
+        </nav>
+        <h1 className="m-0 font-serif font-normal text-[clamp(48px,6vw,88px)] leading-[0.95] tracking-[-0.02em]">
+          Questions, <em className="text-accent">answered.</em>
+        </h1>
+        <p className="mt-6 mb-8 text-muted text-[17px] max-w-[340px]">
+          Everything about our salon, home visits and booking. Still unsure? Message us.
         </p>
+        <a
+          href={ASK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-accent hover:bg-accent-hover text-bone px-[26px] py-4 min-h-[52px] box-border inline-flex items-center gap-2.5 text-[15px]"
+        >
+          Ask on WhatsApp <span aria-hidden="true">→</span>
+        </a>
       </div>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">2. What products do you use?</h2>
-        <p>
-          We use high-quality, professional-grade grooming and haircare products
-          to ensure the best results.
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">3. Do you provide home service?</h2>
-        <p>
-          Yes! We offer premium grooming services at your doorstep. Just book an
-          appointment and well come to you.
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">4. How can I book an appointment?</h2>
-        <p>
-          You can book through our website, social media pages, or by
-          calling/WhatsApping us directly.
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">5. Are your barbers experienced?</h2>
-        <p>
-          Absolutely. Our founder Hammad Ahmad has over 18 years of
-          experience, and all staff are trained to deliver high-quality service.
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">
-          6. What areas in Dubai do you cover for home service?
-        </h2>
-        <p>
-          We cover most areas within Dubai. Contact us to confirm if your
-          location is included.
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">
-          7. What safety measures do you follow for home service?
-        </h2>
-        <p>
-          Our team follows strict hygiene protocols and uses sanitized tools and
-          equipment for every visit.
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">
-          8. Do you offer walk-in appointments at the salon?
-        </h2>
-        <p>
-          Walk-ins are welcome, but we recommend booking in advance to avoid
-          waiting.
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">
-          9. How long does a haircut usually take?
-        </h2>
-        <p>
-          A typical haircut takes 30 to 45 minutes, depending on the style and
-          service.
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <h2 className="font-semibold">
-          10. Do you offer packages or memberships?
-        </h2>
-        <p>
-          Yes, we offer grooming packages and loyalty discounts. Ask in-store or
-          message us for details.
-        </p>
-      </div>
+      <FaqList />
     </div>
   );
 }

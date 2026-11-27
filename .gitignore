@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# design references and prompt notes
+design-ref/
+claude-code-prompts*.md

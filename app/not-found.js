@@ -1,48 +1,52 @@
-"use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { container } from "@/components/home/constants";
 
-export default function Custom404() {
+export const metadata = {
+  title: { absolute: "Page not found | Scissors VIP Salon" },
+  robots: { index: false, follow: true },
+};
+
+const BOOK_URL =
+  "https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon.";
+
+const LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/contact", label: "Contact" },
+];
+
+export default function NotFound() {
   return (
-    <div className="min-h-screen bg-white text-black flex items-center justify-center px-6 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center max-w-xl"
-      >
-        {/* Icon */}
-        <div className="flex justify-center mb-6">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-16 w-16 text-black"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="M5 13l4-3 3 2 4-4 3 3v8H5v-6z"
-            />
-          </svg>
-        </div>
-
-        {/* Headline */}
-        <h1 className="text-6xl font-serif font-bold">404</h1>
-        <p className="text-2xl mt-4 font-light">Page not found.</p>
-        <p className="mt-2 text-gray-500">It might have been moved or deleted.</p>
-
-        {/* Button */}
-        <Link
-          href="/"
-          className="inline-block mt-6 px-6 py-2 border border-black rounded-full hover:bg-black hover:text-white transition"
+    <div className="bg-bone text-ink">
+      <div className={`${container} py-[clamp(72px,10vw,144px)]`}>
+        <h1 className="m-0 font-serif font-normal text-[clamp(48px,6vw,88px)] leading-[0.95] tracking-[-0.02em]">
+          This page has moved.
+        </h1>
+        <p className="mt-6 mb-8 text-muted text-[17px] max-w-[520px]">
+          The page you are looking for doesn&apos;t exist. Try one of these:
+        </p>
+        <ul className="m-0 p-0 list-none flex flex-wrap gap-x-8 gap-y-2 mb-10">
+          {LINKS.map((l) => (
+            <li key={l.href}>
+              <Link
+                href={l.href}
+                className="text-accent hover:text-accent-hover text-[15px] border-b border-accent pt-3 pb-1 min-h-11 box-border inline-flex items-end"
+              >
+                {l.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <a
+          href={BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-accent hover:bg-accent-hover text-bone px-[30px] py-[18px] min-h-14 box-border inline-flex items-center gap-3 text-[15px] font-medium"
         >
-          Go to Home
-        </Link>
-      </motion.div>
+          Book on WhatsApp <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   );
 }
-

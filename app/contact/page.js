@@ -1,36 +1,40 @@
+import Link from "next/link";
+import { container } from "@/components/home/constants";
+import BookingForm from "@/components/contact/BookingForm";
+import SalonDetails from "@/components/contact/SalonDetails";
+import JsonLd, { breadcrumbLd, pageMetadata } from "@/components/JsonLd";
+
+export const metadata = pageMetadata({
+  path: "/contact",
+  title: "Book a Men's Haircut in Al Lisaili, Dubai | Scissors VIP",
+  description: "Visit us at Rashid Building, Saih Al Salam Street, Al Lisaili, or book a home visit. Open daily 10 am to 10 pm. Call or WhatsApp +971 50 137 4524.",
+});
+
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white text-black px-6 py-33 md:px-20">
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-10 border-b border-black pb-4"> Contact Us</h1>
+    <>
+      <JsonLd data={breadcrumbLd("Contact", "/contact")} />
+      <section className={`${container} pt-[clamp(56px,7vw,96px)] pb-[clamp(48px,6vw,72px)]`}>
+        <nav aria-label="Breadcrumb" className="text-[13px] text-muted mb-7">
+          <Link href="/" className="text-muted hover:text-ink inline-flex items-center min-h-11">
+            Home
+          </Link>{" "}
+          / <span className="text-ink" aria-current="page">Contact</span>
+        </nav>
+        <h1 className="m-0 font-serif font-normal text-[clamp(52px,7.4vw,108px)] leading-[0.95] tracking-[-0.02em]">
+          Book your <em className="text-accent">appointment</em>
+        </h1>
+        <p className="mt-6 mb-0 text-muted text-lg max-w-[560px]">
+          Visit us in Al Lisaili or book a home visit anywhere in Dubai. We usually confirm on WhatsApp within minutes.
+        </p>
+      </section>
 
-      <div className="max-w-3xl mx-auto space-y-10">
-        <div className="space-y-4 text-lg">
-          <p> <strong>Address:</strong> Rashid Building, Saih Al Salam Street, Alisaily, Dubai, UAE </p>
-          <p>
-            <strong>Phone:</strong>{" "}
-            <a href="tel:+971501374524" className="underline">
-              971501374524
-            </a>
-          </p>
-          <p>
-            <strong>Email:</strong>{" "}
-            <a href="mailto:scissorsvipsalon@gmail.com" className="underline"> scissorsvipsalon@gmail.com</a>
-          </p>
-          <p>
-            <strong>Working Hours:</strong> Mon – Sun: 10 a.m to 10 p.m
-          </p>
-        </div>
-
-        <form className="grid gap-6">
-          <div className="grid md:grid-cols-2 gap-4">
-            <input  type="text"  placeholder="Your Name" className="border border-black p-3 rounded-md bg-white text-black" />
-            <input type="email"placeholder="Your Email" className="border border-black p-3 rounded-md bg-white text-black" />
-          </div>
-          <textarea  rows={5} placeholder="Your Message"className="border border-black p-3 rounded-md bg-white text-black"
-          ></textarea>
-          <button type="submit"  className="border border-black px-6 py-3 rounded-md hover:bg-black hover:text-white transition"> Send Message</button>
-        </form>
-      </div>
-    </div>
+      <section
+        className={`${container} pb-[clamp(72px,9vw,120px)] flex flex-wrap gap-[clamp(40px,6vw,96px)] items-start`}
+      >
+        <BookingForm />
+        <SalonDetails />
+      </section>
+    </>
   );
 }
