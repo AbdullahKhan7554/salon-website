@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Preloader, { PRELOAD_KEY } from "@/components/Preloader";
 import { SITE_URL, OG_DEFAULTS } from "@/components/JsonLd";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -57,12 +58,27 @@ export const metadata = {
 };
 
 
+// Runs before first paint: skip the preloader on repeat visits in this session,
+// otherwise lock scroll while it shows.
+const PRELOAD_SCRIPT = `try{document.documentElement.classList.add(sessionStorage.getItem("${PRELOAD_KEY}")?"svip-no-preload":"svip-preloading")}catch(e){document.documentElement.classList.add("svip-preloading")}`;
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${heading.variable} ${body.variable} ${label.variable}`}>
+    <html
+      lang="en"
+      className={`${heading.variable} ${body.variable} ${label.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: PRELOAD_SCRIPT }} />
+        <noscript>
+          <style>{`.svip-preloader{display:none}`}</style>
+        </noscript>
+      </head>
       <body
         className={`antialiased flex flex-col min-h-screen`}
       >
+        <Preloader />
         <Navbar />
         <main className="flex-grow">
     {children}
