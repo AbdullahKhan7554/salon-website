@@ -68,7 +68,7 @@ const initials = (name) =>
 function Card({ r }) {
   return (
     <figure className="tm-card m-0 flex-none w-[82vw] lg:w-[440px] box-border flex flex-col gap-6 bg-white border border-[var(--line)] rounded-[20px] p-8 shadow-[0_10px_30px_rgba(22,19,17,0.06)] transition-[border-color,transform] duration-200 hover:border-[var(--accent)] hover:-translate-y-1 motion-reduce:hover:translate-y-0">
-      <span aria-hidden="true" className="block font-serif text-[64px] leading-[0.6] h-[38px] text-[var(--accent)]">
+      <span aria-hidden="true" className="block font-heading text-[64px] leading-[0.6] h-[38px] text-[var(--accent)]">
         &ldquo;
       </span>
       <blockquote className="m-0 flex-1 text-[18px] leading-[1.65] text-[var(--ink)] whitespace-normal line-clamp-6">
@@ -126,10 +126,10 @@ export default function Testimonials() {
       <style>{MARQUEE_CSS}</style>
       <Container className="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-end">
         <div className="min-w-0">
-          <p className="m-0 mb-4 text-[12px] font-medium uppercase tracking-[0.2em] text-[var(--accent)]">
+          <p className="m-0 mb-4 font-label text-[12px] font-medium uppercase tracking-[0.2em] text-[var(--accent)]">
             Client reviews
           </p>
-          <h2 id="words-title" className="m-0 font-serif font-normal text-[clamp(36px,4vw,56px)] leading-[1.1]">
+          <h2 id="words-title" className="m-0 font-heading font-normal text-[clamp(36px,4vw,56px)] leading-[1.1]">
             Trusted by Dubai&apos;s gentlemen
           </h2>
         </div>

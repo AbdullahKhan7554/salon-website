@@ -35,8 +35,9 @@
   --color-ink-border: var(--ink-border);
   --color-ink-rule: var(--ink-rule);
   --color-ink-body: var(--ink-body);
-  --font-serif: var(--font-dm-serif), Georgia, serif;
-  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-heading: var(--font-plus-jakarta), system-ui, "Segoe UI", sans-serif;
+  --font-sans: var(--font-inter), system-ui, "Segoe UI", sans-serif;
+  --font-label: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
 body {
@@ -45,29 +46,33 @@ body {
   color: var(--ink);
   font-size: 17px;
   line-height: 1.7;
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, "Segoe UI", sans-serif;
 }
 
 /* Type scale */
 @utility text-display {
   font-size: clamp(40px, 5.2vw, 76px);
   line-height: 1.05;
+  letter-spacing: -0.03em;
   max-width: 14ch;
 }
 
 @utility text-h2 {
   font-size: clamp(32px, 3.6vw, 52px);
   line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
 @utility text-h3 {
   font-size: clamp(22px, 2vw, 28px);
   line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 @utility text-intro {
   font-size: clamp(24px, 2.4vw, 34px);
   line-height: 1.35;
+  letter-spacing: -0.015em;
   max-width: 30ch;
 }
 
@@ -77,6 +82,7 @@ body {
 }
 
 @utility text-label {
+  font-family: var(--font-label);
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -95,10 +101,11 @@ body {
   padding-bottom: clamp(64px, 8vw, 112px);
 }
 
-/* In the base layer so utilities like font-sans can override it */
+/* In the base layer so utilities like font-sans can override it.
+   Plus Jakarta Sans only ships 600/700, so 400 headings render at 600 (as on Avenix). */
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-dm-serif), Georgia, serif;
+    font-family: var(--font-plus-jakarta), system-ui, "Segoe UI", sans-serif;
     font-weight: 400;
   }
 }

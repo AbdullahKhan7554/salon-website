@@ -34,7 +34,7 @@ const CONNECT = [
 
 const NOTES = ["Home visits across Dubai", "Walk-ins welcome", "Reply on WhatsApp within minutes"];
 
-const label = "m-0 mb-5 font-sans text-[12px] font-medium uppercase tracking-[0.2em] text-ink-muted";
+const label = "m-0 mb-5 font-label text-[12px] font-medium uppercase tracking-[0.2em] text-ink-muted";
 const linkCls =
   "inline-flex items-center gap-2.5 min-h-11 text-bone no-underline underline-offset-4 decoration-1 transition-colors duration-200 hover:text-accent-hover hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
 
@@ -83,7 +83,7 @@ export default function Footer() {
               <span className="flex-none w-24 h-24 rounded-[20px] bg-black inline-flex items-center justify-center overflow-hidden">
                 <Image src="/logo.jpg.svg" alt="" width={72} height={72} className="w-[72px] h-[72px] object-contain" />
               </span>
-              <span className="font-serif text-[40px] leading-[1.05]">Scissors VIP Salon</span>
+              <span className="font-heading text-[40px] leading-[1.05]">Scissors VIP Salon</span>
             </Link>
             <p className="mt-6 mb-10 text-[18px] text-ink-text max-w-[44ch]">
               Premium men&apos;s grooming in Dubai, in our salon or at your doorstep.
@@ -110,7 +110,7 @@ export default function Footer() {
               </span>
             </address>
 
-            <ul className="m-0 mt-8 p-0 list-none flex flex-col gap-1.5 text-[12px] uppercase tracking-[0.2em] text-ink-muted">
+            <ul className="m-0 mt-8 p-0 list-none flex flex-col gap-1.5 font-label text-[12px] uppercase tracking-[0.2em] text-ink-muted">
               {NOTES.map((n) => (
                 <li key={n}>{n}</li>
               ))}

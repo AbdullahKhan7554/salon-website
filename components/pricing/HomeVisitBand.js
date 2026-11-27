@@ -9,7 +9,7 @@ export default function HomeVisitBand() {
         <div className="flex-[1_1_480px] min-w-0">
           <h2
             id="home-visit-title"
-            className="m-0 font-serif font-normal text-h2"
+            className="m-0 font-heading font-normal text-h2"
           >
             Home visits across Dubai
           </h2>

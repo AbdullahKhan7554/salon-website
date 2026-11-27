@@ -14,7 +14,7 @@ export default function LegalPage({ title, intro, sections }) {
         </Link>{" "}
         / <span className="text-ink" aria-current="page">{title}</span>
       </nav>
-      <h1 className="m-0 font-serif font-normal text-display">{title}</h1>
+      <h1 className="m-0 font-heading font-normal text-display">{title}</h1>
       <p className="mt-5 mb-14 text-muted text-body max-w-[640px]">{intro}</p>
       <div className="flex flex-col border-t border-ink">
         {sections.map((s) => (
@@ -25,7 +25,7 @@ export default function LegalPage({ title, intro, sections }) {
           >
             <h2
               id={`section-${s.n}`}
-              className="m-0 flex-[1_1_260px] min-w-0 font-serif font-normal text-h3"
+              className="m-0 flex-[1_1_260px] min-w-0 font-heading font-normal text-h3"
             >
               <span className="text-accent mr-3">{s.n}</span>
               {s.title}

@@ -6,7 +6,7 @@ export default function PriceList() {
     <Container as="section" aria-label="Price list" className="py-section grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-x-16 gap-y-14">
       {PRICE_GROUPS.map((g) => (
         <div key={g.id}>
-          <h2 id={`${g.id}-prices`} className="m-0 mb-2 font-serif font-normal text-h2">
+          <h2 id={`${g.id}-prices`} className="m-0 mb-2 font-heading font-normal text-h2">
             {g.title}
           </h2>
           <p className="text-label m-0 mb-5 text-muted">{g.items.length} services</p>

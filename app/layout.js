@@ -1,5 +1,6 @@
 
-import { DM_Serif_Display, DM_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -21,18 +22,28 @@ function WhatsAppButton() {
   );
 }
 
-const serif = DM_Serif_Display({
-  weight: "400",
-  style: ["normal", "italic"],
+// Same typefaces and weights as the Avenix Studio site.
+// Headings: Plus Jakarta Sans 600/700. Body: Inter 400/500. Labels: Geist Mono (variable, local).
+const heading = Plus_Jakarta_Sans({
+  weight: ["600", "700"],
   subsets: ["latin"],
-  variable: "--font-dm-serif",
+  variable: "--font-plus-jakarta",
   display: "swap",
 });
 
-const sans = DM_Sans({
-  weight: ["400", "500", "700"],
+const body = Inter({
+  weight: ["400", "500"],
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const label = localFont({
+  src: "../public/fonts/GeistMono-Variable.woff2",
+  variable: "--font-geist-mono",
+  adjustFontFallback: false,
+  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
+  weight: "100 900",
   display: "swap",
 });
 
@@ -48,7 +59,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="en" className={`${heading.variable} ${body.variable} ${label.variable}`}>
       <body
         className={`antialiased flex flex-col min-h-screen`}
       >

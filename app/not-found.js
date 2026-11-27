@@ -20,7 +20,7 @@ export default function NotFound() {
   return (
     <div className="bg-bone text-ink">
       <Container className="py-section">
-        <h1 className="m-0 font-serif font-normal text-display tracking-[-0.02em]">
+        <h1 className="m-0 font-heading font-normal text-display tracking-[-0.02em]">
           This page has moved.
         </h1>
         <p className="mt-6 mb-8 text-muted text-body max-w-[520px]">

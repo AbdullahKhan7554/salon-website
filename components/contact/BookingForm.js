@@ -58,7 +58,7 @@ export default function BookingForm() {
       className="flex-[3_1_520px] min-w-0 box-border flex flex-col gap-[22px] bg-white border border-[var(--line)] rounded-[24px] p-[clamp(24px,4vw,48px)] shadow-[0_20px_60px_rgba(22,19,17,0.08)]"
     >
       <div>
-        <h2 className="m-0 font-serif font-normal text-[32px] leading-[1.15]">Request a booking</h2>
+        <h2 className="m-0 font-heading font-normal text-[32px] leading-[1.15]">Request a booking</h2>
         <p className="mt-2 mb-0 text-muted text-[15px]">We reply on WhatsApp within minutes.</p>
       </div>
 

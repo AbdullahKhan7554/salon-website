@@ -8,7 +8,7 @@ export default function Intro() {
       aria-label="Introduction"
       className="py-section flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-16"
     >
-      <p className="m-0 font-serif text-intro lg:flex-1 min-w-0">
+      <p className="m-0 font-heading text-intro lg:flex-1 min-w-0">
         One barber who listens first, cuts with precision and treats every client as a{" "}
         <em className="text-accent">VIP</em>. In the salon, or in your living room.
       </p>

@@ -47,7 +47,7 @@ export default function FaqList() {
       {FAQS.map((f) => (
         <details key={f.q} className="group border-b border-line">
           <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer flex justify-between items-center gap-6 py-[26px] min-h-11 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-            <h2 className="m-0 font-serif font-normal text-h3">{f.q}</h2>
+            <h2 className="m-0 font-heading font-normal text-h3">{f.q}</h2>
             <span
               aria-hidden="true"
               className="flex-none text-[26px] leading-none text-accent transition-transform group-open:rotate-45"

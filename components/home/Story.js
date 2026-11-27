@@ -11,7 +11,7 @@ export default function Story() {
           <h2 id="barber-title" className={`${eyebrow} mb-8`}>
             Our story
           </h2>
-          <p className="m-0 font-serif text-h2">
+          <p className="m-0 font-heading text-h2">
             It began with a pair of scissors and a dream.
           </p>
           <p className="mt-8 mb-0 text-ink-text text-body max-w-[560px]">

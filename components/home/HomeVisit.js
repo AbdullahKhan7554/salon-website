@@ -34,7 +34,7 @@ export default function HomeVisit() {
         <ol className="m-0 p-0 list-none border-t border-line">
           {STEPS.map((st) => (
             <li key={st.n} className="flex gap-6 py-5 border-b border-line">
-              <span className="font-serif text-h3 text-accent flex-[0_0_40px]">{st.n}</span>
+              <span className="font-heading text-h3 text-accent flex-[0_0_40px]">{st.n}</span>
               <div>
                 <h3 className="m-0 mb-0.5 font-sans text-base font-semibold">{st.title}</h3>
                 <p className="m-0 text-muted text-[15px]">{st.desc}</p>

@@ -7,8 +7,8 @@ export default function Story() {
       {CHAPTERS.map((c) => (
         <div key={c.n} className="flex flex-wrap gap-y-4 gap-x-[clamp(32px,5vw,80px)] py-12 border-t border-line">
           <div className="flex-[1_1_260px] min-w-0">
-            <span className="font-serif text-h3 text-accent">{c.n}</span>
-            <h2 className="mt-1.5 mb-0 font-serif font-normal text-h2">
+            <span className="font-heading text-h3 text-accent">{c.n}</span>
+            <h2 className="mt-1.5 mb-0 font-heading font-normal text-h2">
               {c.title}
             </h2>
           </div>

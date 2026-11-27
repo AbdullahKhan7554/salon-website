@@ -12,7 +12,7 @@ export default function ServiceGroups() {
           <div className="flex flex-wrap justify-between items-end gap-4 pb-7 border-b border-ink mb-10">
             <h2
               id={`${g.id}-title`}
-              className="m-0 font-serif font-normal text-h2"
+              className="m-0 font-heading font-normal text-h2"
             >
               <span className="text-accent text-[0.5em] align-middle mr-4">{g.no}</span>
               {g.title}
@@ -33,7 +33,7 @@ export default function ServiceGroups() {
                   />
                 </div>
                 <div className="flex justify-between items-baseline gap-3">
-                  <h3 className="m-0 font-serif font-normal text-h3">{item.name}</h3>
+                  <h3 className="m-0 font-heading font-normal text-h3">{item.name}</h3>
                   <span className="text-accent font-medium text-[15px] whitespace-nowrap">AED {item.price}</span>
                 </div>
                 <p className="m-0 text-muted text-[15px]">{item.desc}</p>

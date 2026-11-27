@@ -54,8 +54,8 @@ export default function PageHero({
             <span aria-hidden="true">/</span> <span aria-current="page">{crumb}</span>
           </nav>
         )}
-        {label && <LabelTag className="text-label m-0 mb-6 font-sans font-medium text-bone">{label}</LabelTag>}
-        <TitleTag className="m-0 font-serif font-normal text-display tracking-[-0.02em] text-bone">{title}</TitleTag>
+        {label && <LabelTag className="text-label m-0 mb-6 font-medium text-bone">{label}</LabelTag>}
+        <TitleTag className="m-0 font-heading font-normal text-display tracking-[-0.02em] text-bone">{title}</TitleTag>
         {subtitle && <p className="mt-6 mb-0 text-body text-bone max-w-[52ch]">{subtitle}</p>}
         {actions && <div className="mt-9 flex flex-wrap gap-x-9 gap-y-4 items-center">{actions}</div>}
       </Container>

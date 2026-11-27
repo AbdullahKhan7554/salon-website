@@ -27,7 +27,7 @@ export default function SignatureServices() {
         <div className="flex-[3_1_560px] min-w-0">
           {MENU.map((s) => (
             <div key={s.name} className="py-6 border-b border-line flex flex-wrap gap-x-6 gap-y-1.5 items-baseline">
-              <h3 className="m-0 flex-[1_1_240px] font-serif font-normal text-h3">{s.name}</h3>
+              <h3 className="m-0 flex-[1_1_240px] font-heading font-normal text-h3">{s.name}</h3>
               <p className="m-0 flex-[2_1_260px] text-muted text-[15px]">{s.desc}</p>
               <span className="flex-none text-accent font-medium text-[15px]">AED {s.price}</span>
             </div>
