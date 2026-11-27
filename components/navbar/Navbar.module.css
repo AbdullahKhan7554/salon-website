@@ -1,0 +1,356 @@
+/* Floating pill navbar (structure and behaviour mirror the Xtreme Fitness header). */
+
+.header {
+  --pill-top: 10px;
+  --pill-h: 72px;
+  --pill-pad: 12px;
+  z-index: 1000;
+  padding-top: var(--pill-top);
+}
+
+/* Over a hero: sits on top of it and scrolls away with the page. */
+.overHero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Only the pill takes clicks, not the transparent strip around it */
+  pointer-events: none;
+}
+
+/* Pages without a hero: same pill, but in the document flow. */
+.inFlow {
+  position: relative;
+}
+
+.pill {
+  position: relative;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 36px;
+  height: var(--pill-h);
+  /* Pill reaches out by its own padding so the logo lines up with page content */
+  margin-inline: calc(-1 * var(--pill-pad));
+  /* minus the 1px border, so the logo lands exactly on the content edge */
+  padding: 0 calc(var(--pill-pad) - 1px);
+  border-radius: 999px;
+  background: var(--ink);
+  border: 1px solid var(--ink-line);
+  box-shadow: 0 10px 30px rgb(22 19 17 / 0.35);
+  color: var(--bone);
+}
+
+.logo {
+  position: relative;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.logoImg {
+  display: block;
+  width: auto;
+  height: 36px;
+}
+
+.links {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  white-space: nowrap;
+  transition: color 300ms;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 4px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  line-height: 1;
+  background-color: var(--accent);
+  color: var(--bone);
+  transition: background-color 300ms, transform 150ms, box-shadow 300ms;
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 3px;
+}
+
+/* Hamburger */
+.burger {
+  position: relative;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.burger:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+.burgerLine {
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--bone);
+  transform-origin: center;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms;
+}
+
+.burgerOpen .burgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burgerOpen .burgerLine:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burgerOpen .burgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobileBar {
+  display: none;
+}
+
+/* ========== Desktop (pill row: logo left, links centre, CTA right) ========== */
+@media (min-width: 1024px) {
+  .header {
+    --pill-pad: 28px;
+  }
+
+  .burger,
+  .mobileBar {
+    display: none;
+  }
+
+  .logoImg {
+    height: 44px;
+  }
+
+  /* List items join the pill's flex row */
+  .links {
+    display: contents;
+  }
+
+  .logo {
+    flex: 1 1 0;
+  }
+
+  .ctaItem {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(239 232 220 / 0.7);
+  }
+
+  .link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+  }
+
+  .link:hover,
+  .active {
+    color: var(--bone);
+  }
+
+  .link:hover::after,
+  .active::after {
+    transform: scaleX(1);
+  }
+
+  .cta {
+    min-height: 44px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .cta:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgb(140 47 31 / 0.35);
+  }
+}
+
+/* Slightly tighter spacing on narrow desktops */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .pill {
+    column-gap: 26px;
+  }
+}
+
+/* ========== Mobile full-screen panel ========== */
+@media (max-width: 1023px) {
+  .links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding: 0 0 40px;
+    background-color: var(--ink);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform 0.35s ease, opacity 0.35s ease, visibility 0s linear 0.35s;
+  }
+
+  .open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.35s ease, opacity 0.35s ease, visibility 0s linear 0s;
+  }
+
+  /* Header logo sits under the panel; the panel shows its own copy in the same spot */
+  .logo {
+    z-index: 1;
+  }
+
+  .links > li {
+    flex-shrink: 0;
+  }
+
+  /* Top bar: same geometry as the pill so nothing jumps when the panel opens */
+  .mobileBar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    height: calc(var(--pill-top) + var(--pill-h));
+    padding-top: var(--pill-top);
+    margin-bottom: 8px;
+    background-color: var(--ink);
+  }
+
+  /* Staggered entrance */
+  .links > li:not(.mobileBar) {
+    opacity: 0;
+    transform: translateX(24px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .open > li:not(.mobileBar) {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .open > li:nth-child(2) { transition-delay: 0.1s; }
+  .open > li:nth-child(3) { transition-delay: 0.14s; }
+  .open > li:nth-child(4) { transition-delay: 0.18s; }
+  .open > li:nth-child(5) { transition-delay: 0.22s; }
+  .open > li:nth-child(6) { transition-delay: 0.26s; }
+  .open > li:nth-child(7) { transition-delay: 0.3s; }
+
+  .link {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-text);
+    border-bottom: 1px solid var(--ink-line);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .link:hover,
+  .link:active,
+  .link:focus-visible,
+  .active {
+    color: var(--accent-soft);
+  }
+
+  .link:hover,
+  .link:active {
+    transform: translateX(6px);
+  }
+
+  .link:focus-visible {
+    outline: none;
+  }
+
+  .cta {
+    display: flex;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 32px;
+    padding: 14px 22px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 4px;
+  }
+
+  .cta:hover {
+    background-color: var(--accent-hover);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .links,
+  .links > li,
+  .link,
+  .link::after,
+  .cta,
+  .burgerLine {
+    transition: none !important;
+  }
+}
