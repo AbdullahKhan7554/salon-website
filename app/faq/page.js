@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { container } from "@/components/home/constants";
+import Container from "@/components/Container";
 import FaqList, { FAQS } from "@/components/faq/FaqList";
 import JsonLd, { breadcrumbLd, pageMetadata } from "@/components/JsonLd";
 
@@ -23,9 +23,7 @@ const FAQ_LD = {
 
 export default function FAQPage() {
   return (
-    <div
-      className={`${container} pt-[clamp(56px,7vw,96px)] pb-[clamp(72px,9vw,128px)] flex flex-wrap gap-[clamp(40px,6vw,96px)]`}
-    >
+    <Container className="pt-section pb-section flex flex-wrap gap-[clamp(40px,6vw,96px)]">
       <JsonLd data={FAQ_LD} />
       <JsonLd data={breadcrumbLd("FAQ", "/faq")} />
       <div className="flex-[1_1_320px] min-w-0">
@@ -35,10 +33,10 @@ export default function FAQPage() {
           </Link>{" "}
           / <span className="text-ink" aria-current="page">FAQ</span>
         </nav>
-        <h1 className="m-0 font-serif font-normal text-[clamp(48px,6vw,88px)] leading-[0.95] tracking-[-0.02em]">
+        <h1 className="m-0 font-serif font-normal text-display tracking-[-0.02em]">
           Questions, <em className="text-accent">answered.</em>
         </h1>
-        <p className="mt-6 mb-8 text-muted text-[17px] max-w-[340px]">
+        <p className="mt-6 mb-8 text-muted text-body max-w-[340px]">
           Everything about our salon, home visits and booking. Still unsure? Message us.
         </p>
         <a
@@ -51,6 +49,6 @@ export default function FAQPage() {
         </a>
       </div>
       <FaqList />
-    </div>
+    </Container>
   );
 }

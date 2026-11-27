@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { container, sectionTitle } from "./constants";
+import { sectionTitle } from "./constants";
+import Container from "@/components/Container";
 
 const STEPS = [
   { n: "I", title: "Message us on WhatsApp", desc: "Service, location and a time that suits you." },
@@ -9,10 +10,7 @@ const STEPS = [
 
 export default function HomeVisit() {
   return (
-    <section
-      aria-labelledby="home-title"
-      className={`${container} pb-[clamp(72px,9vw,128px)] flex flex-wrap gap-[clamp(32px,5vw,80px)] items-center`}
-    >
+    <Container as="section" aria-labelledby="home-title" className="pb-section flex flex-wrap gap-[clamp(32px,5vw,80px)] items-center">
       <div className="flex-[1_1_420px] min-w-0 aspect-[5/4] bg-placeholder overflow-hidden">
         <Image
           src="/services/beard-shave-trim.jpg"
@@ -30,13 +28,13 @@ export default function HomeVisit() {
           <br />
           <em className="text-accent">at your door.</em>
         </h2>
-        <p className="mt-6 mb-9 text-muted text-[17px] max-w-[460px]">
+        <p className="mt-6 mb-9 text-muted text-body max-w-[460px]">
           Home grooming across most areas of Dubai. Same tools, same standard, every tool sanitised for every visit.
         </p>
         <ol className="m-0 p-0 list-none border-t border-line">
           {STEPS.map((st) => (
             <li key={st.n} className="flex gap-6 py-5 border-b border-line">
-              <span className="font-serif text-[28px] leading-none text-accent flex-[0_0_40px]">{st.n}</span>
+              <span className="font-serif text-h3 text-accent flex-[0_0_40px]">{st.n}</span>
               <div>
                 <h3 className="m-0 mb-0.5 font-sans text-base font-semibold">{st.title}</h3>
                 <p className="m-0 text-muted text-[15px]">{st.desc}</p>
@@ -45,6 +43,6 @@ export default function HomeVisit() {
           ))}
         </ol>
       </div>
-    </section>
+    </Container>
   );
 }

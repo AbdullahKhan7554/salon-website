@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { container } from "@/components/home/constants";
+import Container from "@/components/Container";
 
 /**
  * Shared layout for Terms and Privacy: breadcrumb, title, intro,
@@ -7,15 +7,15 @@ import { container } from "@/components/home/constants";
  */
 export default function LegalPage({ title, intro, sections }) {
   return (
-    <div className={`${container} pt-[clamp(56px,7vw,96px)] pb-[clamp(72px,9vw,128px)]`}>
+    <Container className="pt-section pb-section">
       <nav aria-label="Breadcrumb" className="text-[13px] text-muted mb-7">
         <Link href="/" className="text-muted hover:text-ink inline-flex items-center min-h-11">
           Home
         </Link>{" "}
         / <span className="text-ink" aria-current="page">{title}</span>
       </nav>
-      <h1 className="m-0 font-serif font-normal text-[clamp(48px,6vw,88px)] leading-[0.95]">{title}</h1>
-      <p className="mt-5 mb-14 text-muted text-[17px] max-w-[640px]">{intro}</p>
+      <h1 className="m-0 font-serif font-normal text-display">{title}</h1>
+      <p className="mt-5 mb-14 text-muted text-body max-w-[640px]">{intro}</p>
       <div className="flex flex-col border-t border-ink">
         {sections.map((s) => (
           <section
@@ -25,7 +25,7 @@ export default function LegalPage({ title, intro, sections }) {
           >
             <h2
               id={`section-${s.n}`}
-              className="m-0 flex-[1_1_260px] min-w-0 font-serif font-normal text-[30px] leading-[1.15]"
+              className="m-0 flex-[1_1_260px] min-w-0 font-serif font-normal text-h3"
             >
               <span className="text-accent mr-3">{s.n}</span>
               {s.title}
@@ -40,6 +40,6 @@ export default function LegalPage({ title, intro, sections }) {
           </section>
         ))}
       </div>
-    </div>
+    </Container>
   );
 }

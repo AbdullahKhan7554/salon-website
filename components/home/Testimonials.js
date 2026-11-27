@@ -1,4 +1,5 @@
-import { container, sectionTitle } from "./constants";
+import { sectionTitle } from "./constants";
+import Container from "@/components/Container";
 
 const FEATURED = {
   name: "Yaqoob Al Suwadi",
@@ -26,15 +27,15 @@ const REVIEWS = [
 
 export default function Testimonials() {
   return (
-    <section aria-labelledby="words-title" className={`${container} py-[clamp(72px,9vw,128px)]`}>
+    <Container as="section" aria-labelledby="words-title" className="py-section">
       <h2 id="words-title" className={`${sectionTitle} mb-12`}>
         In their words
       </h2>
       <figure className="m-0 mb-14 pb-14 border-b border-line">
-        <blockquote className="m-0 font-serif text-[clamp(28px,3.2vw,44px)] leading-[1.2] max-w-[1000px]">
+        <blockquote className="m-0 font-serif text-h2 max-w-[1000px]">
           &ldquo;{FEATURED.text}&rdquo;
         </blockquote>
-        <figcaption className="mt-5 text-[13px] tracking-[0.16em] uppercase text-muted">
+        <figcaption className="text-label mt-5 text-muted">
           {FEATURED.name} · Client for 5+ years
         </figcaption>
       </figure>
@@ -42,10 +43,10 @@ export default function Testimonials() {
         {REVIEWS.map((r) => (
           <figure key={r.name} className="m-0">
             <blockquote className="m-0 text-base text-ink-body">&ldquo;{r.text}&rdquo;</blockquote>
-            <figcaption className="mt-4 text-xs tracking-[0.16em] uppercase text-muted">{r.name}</figcaption>
+            <figcaption className="text-label mt-4 text-muted">{r.name}</figcaption>
           </figure>
         ))}
       </div>
-    </section>
+    </Container>
   );
 }

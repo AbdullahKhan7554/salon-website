@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { container } from "@/components/home/constants";
+import Container from "@/components/Container";
 
 export default function AboutCta() {
   return (
-    <section
-      className={`${container} py-[clamp(72px,9vw,120px)] flex flex-wrap gap-7 justify-between items-center`}
-    >
-      <p className="m-0 font-serif text-[clamp(32px,3.8vw,52px)] leading-[1.1] max-w-[720px]">
+    <Container as="section" className="py-section flex flex-wrap gap-7 justify-between items-center">
+      <p className="m-0 font-serif text-h2 max-w-[720px]">
         Be part of the story. Book your first <em className="text-accent">VIP</em> cut.
       </p>
       <div className="flex flex-wrap gap-x-8 gap-y-5 items-center">
@@ -23,6 +21,6 @@ export default function AboutCta() {
           Book now
         </Link>
       </div>
-    </section>
+    </Container>
   );
 }

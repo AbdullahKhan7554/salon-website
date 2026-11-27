@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { container } from "@/components/home/constants";
+import Container from "@/components/Container";
 
 export const metadata = {
   title: { absolute: "Page not found | Scissors VIP Salon" },
@@ -19,11 +19,11 @@ const LINKS = [
 export default function NotFound() {
   return (
     <div className="bg-bone text-ink">
-      <div className={`${container} py-[clamp(72px,10vw,144px)]`}>
-        <h1 className="m-0 font-serif font-normal text-[clamp(48px,6vw,88px)] leading-[0.95] tracking-[-0.02em]">
+      <Container className="py-section">
+        <h1 className="m-0 font-serif font-normal text-display tracking-[-0.02em]">
           This page has moved.
         </h1>
-        <p className="mt-6 mb-8 text-muted text-[17px] max-w-[520px]">
+        <p className="mt-6 mb-8 text-muted text-body max-w-[520px]">
           The page you are looking for doesn&apos;t exist. Try one of these:
         </p>
         <ul className="m-0 p-0 list-none flex flex-wrap gap-x-8 gap-y-2 mb-10">
@@ -46,7 +46,7 @@ export default function NotFound() {
         >
           Book on WhatsApp <span aria-hidden="true">→</span>
         </a>
-      </div>
+      </Container>
     </div>
   );
 }

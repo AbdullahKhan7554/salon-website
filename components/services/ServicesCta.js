@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { container } from "@/components/home/constants";
+import Container from "@/components/Container";
 
 export default function ServicesCta() {
   return (
-    <section className={`${container} py-[clamp(80px,9vw,128px)]`}>
+    <Container as="section" className="py-section">
       <div className="flex flex-wrap justify-between items-center gap-7 py-12 border-y border-line">
-        <p className="m-0 font-serif text-[clamp(30px,3.4vw,46px)] leading-[1.1] max-w-[640px]">
+        <p className="m-0 font-serif text-h2 max-w-[640px]">
           Prefer it at home? Every service is available as a <em className="text-accent">home visit</em> across Dubai.
         </p>
         <Link
@@ -15,6 +15,6 @@ export default function ServicesCta() {
           View full price list →
         </Link>
       </div>
-    </section>
+    </Container>
   );
 }

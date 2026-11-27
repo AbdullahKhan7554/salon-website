@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Container from "@/components/Container";
 
 const BOOK_URL =
   "https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon.";
@@ -28,9 +29,10 @@ export default function Navbar() {
 
   return (
     <header className="bg-ink text-bone border-b border-ink-line">
-      <nav
+      <Container
+        as="nav"
         aria-label="Main"
-        className="max-w-[1280px] mx-auto px-7 py-4 flex flex-wrap items-center justify-between gap-x-7 gap-y-4"
+        className="py-4 flex flex-wrap items-center justify-between gap-x-7 gap-y-4"
       >
         <Link
           href="/"
@@ -55,7 +57,7 @@ export default function Navbar() {
 
         <div
           id="main-menu"
-          className={`${isOpen ? "flex" : "hidden"} md:flex basis-full md:basis-auto flex-col md:flex-row md:flex-wrap md:items-center gap-y-2 md:gap-x-7 bg-ink -mx-7 md:mx-0 px-7 md:px-0 pb-6 md:pb-0 text-[13px] tracking-[0.14em] uppercase`}
+          className={`${isOpen ? "flex" : "hidden"} md:flex basis-full md:basis-auto flex-col md:flex-row md:flex-wrap md:items-center gap-y-2 md:gap-x-7 bg-ink -mx-[clamp(20px,5vw,48px)] md:mx-0 px-[clamp(20px,5vw,48px)] md:px-0 pb-6 md:pb-0 text-[13px] tracking-[0.14em] uppercase`}
         >
           {LINKS.map(({ href, label }) => {
             const active = isActive(href);
@@ -81,7 +83,7 @@ export default function Navbar() {
             Book now <span aria-hidden="true">→</span>
           </a>
         </div>
-      </nav>
+      </Container>
     </header>
   );
 }

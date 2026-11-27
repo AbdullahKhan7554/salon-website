@@ -1,19 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { container, eyebrow } from "./constants";
+import { eyebrow } from "./constants";
+import Container from "@/components/Container";
 
 export default function Story() {
   return (
     <section aria-labelledby="barber-title" className="bg-ink text-bone">
-      <div className={`${container} py-[clamp(72px,9vw,128px)] flex flex-wrap gap-[clamp(32px,5vw,80px)] items-center`}>
+      <Container className="py-section flex flex-wrap gap-[clamp(32px,5vw,80px)] items-center">
         <div className="flex-[1_1_520px] min-w-0">
           <h2 id="barber-title" className={`${eyebrow} mb-8`}>
             Our story
           </h2>
-          <p className="m-0 font-serif text-[clamp(34px,4.2vw,58px)] leading-[1.12]">
+          <p className="m-0 font-serif text-h2">
             It began with a pair of scissors and a dream.
           </p>
-          <p className="mt-8 mb-0 text-ink-text text-[17px] max-w-[560px]">
+          <p className="mt-8 mb-0 text-ink-text text-body max-w-[560px]">
             Nearly two decades ago, Hammad, known to his clients as Ahmad, started shaping cuts and confidence. Clients
             kept coming back for the precision and the VIP treatment, and that loyalty became Scissors VIP Salon.
           </p>
@@ -35,7 +36,7 @@ export default function Story() {
             className="w-full h-full object-cover"
           />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

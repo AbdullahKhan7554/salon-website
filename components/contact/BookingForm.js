@@ -9,7 +9,7 @@ const SERVICES = PRICE_GROUPS.flatMap((g) => g.items.map((i) => `${i.name} — $
 
 const labelCls = "flex flex-col gap-2 text-sm font-medium";
 const fieldCls =
-  "font-normal text-base py-3.5 border-0 border-b border-ink-muted bg-transparent min-h-12 focus:outline-none focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+  "w-full rounded-none font-normal text-base py-3.5 border-0 border-b border-ink-muted bg-transparent min-h-12 focus:outline-none focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
 
 function toggleCls(on) {
   return `text-[15px] px-[22px] py-3 min-h-12 cursor-pointer border ${
@@ -56,7 +56,7 @@ export default function BookingForm() {
       className="flex-[3_1_520px] min-w-0 flex flex-col gap-[22px] pt-8 border-t border-ink"
     >
       <fieldset className="border-0 m-0 p-0">
-        <legend className="text-xs tracking-[0.2em] uppercase text-muted mb-3">Where</legend>
+        <legend className="text-label text-muted mb-3">Where</legend>
         <div className="flex flex-wrap gap-3">
           <button type="button" aria-pressed={!isHome} onClick={() => setWhere("salon")} className={toggleCls(!isHome)}>
             In the salon
@@ -78,14 +78,23 @@ export default function BookingForm() {
         </label>
         <label className={labelCls}>
           Service
-          <select name="service" defaultValue="" className={fieldCls}>
-            <option value="">Not sure yet</option>
-            {SERVICES.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
+          <span className="relative">
+            <select
+              name="service"
+              defaultValue=""
+              className={`${fieldCls} w-full appearance-none rounded-none pr-8 cursor-pointer`}
+            >
+              <option value="">Not sure yet</option>
+              {SERVICES.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+            <span aria-hidden="true" className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-muted">
+              ▾
+            </span>
+          </span>
         </label>
         <label className={labelCls}>
           Preferred date &amp; time

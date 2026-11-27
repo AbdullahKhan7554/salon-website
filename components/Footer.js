@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/components/Container";
 
 const BOOK_URL =
   "https://wa.me/971501374524?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20your%20salon.";
@@ -14,15 +15,15 @@ const LINKS = [
   { href: "/privacy", label: "Privacy" },
 ];
 
-const label = "text-xs tracking-[0.2em] uppercase text-ink-muted/80 mb-2.5";
+const label = "text-label text-ink-muted/80 mb-2.5";
 const link = "no-underline inline-flex items-center min-h-11 hover:text-bone";
 
 export default function Footer() {
   return (
     <footer className="bg-ink text-ink-muted text-[15px] leading-[1.7]">
-      <div className="max-w-[1280px] mx-auto px-7 pt-[72px] pb-10">
+      <Container className="pt-section pb-10">
         <div className="flex flex-wrap justify-between items-end gap-6 pb-12 border-b border-ink-line">
-          <p className="m-0 font-serif text-[clamp(36px,4.4vw,60px)] leading-none text-bone">
+          <p className="m-0 font-serif text-h2 text-bone">
             Your chair is waiting.
           </p>
           <a
@@ -97,7 +98,7 @@ export default function Footer() {
             </a>
           </span>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

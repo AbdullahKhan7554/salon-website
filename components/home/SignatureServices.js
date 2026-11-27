@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { container, sectionTitle } from "./constants";
+import { sectionTitle } from "./constants";
+import Container from "@/components/Container";
 
 const MENU = [
   { name: "Hair Cut", desc: "Classic, fade or modern styles.", price: "80" },
@@ -13,7 +14,7 @@ const MENU = [
 export default function SignatureServices() {
   return (
     <section aria-labelledby="menu-title" className="border-t border-line">
-      <div className={`${container} py-[clamp(64px,8vw,112px)] flex flex-wrap gap-[clamp(32px,5vw,80px)]`}>
+      <Container className="py-section flex flex-wrap gap-[clamp(32px,5vw,80px)]">
         <div className="flex-[1_1_280px] min-w-0">
           <h2 id="menu-title" className={sectionTitle}>
             Signature services
@@ -29,13 +30,13 @@ export default function SignatureServices() {
         <div className="flex-[3_1_560px] min-w-0">
           {MENU.map((s) => (
             <div key={s.name} className="py-6 border-b border-line flex flex-wrap gap-x-6 gap-y-1.5 items-baseline">
-              <h3 className="m-0 flex-[1_1_240px] font-serif font-normal text-[30px] leading-[1.15]">{s.name}</h3>
+              <h3 className="m-0 flex-[1_1_240px] font-serif font-normal text-h3">{s.name}</h3>
               <p className="m-0 flex-[2_1_260px] text-muted text-[15px]">{s.desc}</p>
               <span className="flex-none text-accent font-medium text-[15px]">AED {s.price}</span>
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

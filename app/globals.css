@@ -35,22 +35,72 @@
   --color-ink-border: var(--ink-border);
   --color-ink-rule: var(--ink-rule);
   --color-ink-body: var(--ink-body);
-  --font-serif: var(--font-libre-baskerville), Georgia, serif;
-  --font-sans: var(--font-lato), system-ui, sans-serif;
+  --font-serif: var(--font-dm-serif), Georgia, serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
 }
 
 body {
   margin: 0;
   background: var(--bone);
   color: var(--ink);
-  font-size: 16px;
-  line-height: 1.65;
-  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-libre-baskerville), Georgia, serif;
-  font-weight: 400;
+/* Type scale */
+@utility text-display {
+  font-size: clamp(40px, 5.2vw, 76px);
+  line-height: 1.05;
+  max-width: 14ch;
+}
+
+@utility text-h2 {
+  font-size: clamp(32px, 3.6vw, 52px);
+  line-height: 1.1;
+}
+
+@utility text-h3 {
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.2;
+}
+
+@utility text-intro {
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.35;
+  max-width: 30ch;
+}
+
+@utility text-body {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+@utility text-label {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Section vertical rhythm */
+@utility py-section {
+  padding-block: clamp(64px, 8vw, 112px);
+}
+
+@utility pt-section {
+  padding-top: clamp(64px, 8vw, 112px);
+}
+
+@utility pb-section {
+  padding-bottom: clamp(64px, 8vw, 112px);
+}
+
+/* In the base layer so utilities like font-sans can override it */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-dm-serif), Georgia, serif;
+    font-weight: 400;
+  }
 }
 
 

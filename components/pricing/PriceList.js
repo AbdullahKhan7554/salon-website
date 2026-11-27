@@ -1,18 +1,15 @@
-import { container } from "@/components/home/constants";
+import Container from "@/components/Container";
 import { PRICE_GROUPS } from "./data";
 
 export default function PriceList() {
   return (
-    <section
-      aria-label="Price list"
-      className={`${container} py-[clamp(48px,6vw,80px)] grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-x-16 gap-y-14`}
-    >
+    <Container as="section" aria-label="Price list" className="py-section grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-x-16 gap-y-14">
       {PRICE_GROUPS.map((g) => (
         <div key={g.id}>
-          <h2 id={`${g.id}-prices`} className="m-0 mb-2 font-serif font-normal text-[40px] leading-[1.1]">
+          <h2 id={`${g.id}-prices`} className="m-0 mb-2 font-serif font-normal text-h2">
             {g.title}
           </h2>
-          <p className="m-0 mb-5 text-xs tracking-[0.2em] uppercase text-muted">{g.items.length} services</p>
+          <p className="text-label m-0 mb-5 text-muted">{g.items.length} services</p>
           <ul aria-labelledby={`${g.id}-prices`} className="m-0 p-0 list-none">
             {g.items.map((item) => (
               <li key={item.name} className="flex items-baseline gap-2.5 py-3.5 border-b border-line">
@@ -24,6 +21,6 @@ export default function PriceList() {
           </ul>
         </div>
       ))}
-    </section>
+    </Container>
   );
 }

@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { container } from "@/components/home/constants";
+import Container from "@/components/Container";
 
 export default function AboutHero() {
   return (
     <section className="bg-ink text-bone">
-      <div
-        className={`${container} pt-[clamp(56px,7vw,96px)] pb-[clamp(64px,8vw,112px)] flex flex-wrap gap-[clamp(32px,5vw,72px)] items-end`}
-      >
+      <Container className="pt-section pb-section flex flex-wrap gap-[clamp(32px,5vw,72px)] items-end">
         <div className="flex-[1_1_520px] min-w-0">
           <nav aria-label="Breadcrumb" className="text-[13px] text-ink-muted mb-7">
             <Link href="/" className="text-ink-muted hover:text-bone inline-flex items-center min-h-11">
@@ -15,12 +13,12 @@ export default function AboutHero() {
             </Link>{" "}
             / <span className="text-bone" aria-current="page">About</span>
           </nav>
-          <h1 className="m-0 font-serif font-normal text-[clamp(52px,7.4vw,108px)] leading-[0.95] tracking-[-0.02em]">
+          <h1 className="m-0 font-serif font-normal text-display tracking-[-0.02em]">
             A pair of scissors
             <br />
             and a <em className="text-accent-soft">dream.</em>
           </h1>
-          <p className="mt-7 mb-0 text-ink-text text-lg max-w-[540px]">
+          <p className="mt-7 mb-0 text-ink-text text-body max-w-[540px]">
             The story of Hammad &quot;Ahmad&quot; and Scissors VIP Salon, Dubai.
           </p>
         </div>
@@ -35,7 +33,7 @@ export default function AboutHero() {
             className="w-full h-full object-cover"
           />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

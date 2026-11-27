@@ -1,16 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BOOK_URL, container, eyebrow } from "./constants";
+import { BOOK_URL, eyebrow } from "./constants";
+import Container from "@/components/Container";
 
 export default function Hero() {
   return (
     <section className="bg-ink text-bone">
-      <div
-        className={`${container} pt-[clamp(48px,7vw,96px)] pb-[clamp(56px,8vw,112px)] flex flex-wrap gap-[clamp(32px,5vw,72px)] items-end`}
-      >
+      <Container className="pt-section pb-section flex flex-wrap gap-[clamp(32px,5vw,72px)] items-end">
         <div className="flex-[1_1_520px] min-w-0">
           <h1 className={`${eyebrow} mb-7`}>Premium men&apos;s salon &amp; home grooming in Dubai</h1>
-          <p className="m-0 font-serif text-[clamp(52px,8.4vw,124px)] leading-[0.95] tracking-[-0.02em]">
+          <p className="m-0 font-serif text-display tracking-[-0.02em]">
             The gentleman&apos;s cut, <em className="text-accent-soft">perfected</em> in Dubai.
           </p>
           <div className="mt-11 flex flex-wrap gap-x-9 gap-y-5 items-center">
@@ -47,7 +46,7 @@ export default function Hero() {
             <span>18+ years of craft</span>
           </figcaption>
         </figure>
-      </div>
+      </Container>
     </section>
   );
 }

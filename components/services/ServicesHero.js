@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { container } from "@/components/home/constants";
+import Container from "@/components/Container";
 
 const JUMP = [
   { href: "#hair", label: "Hair" },
@@ -12,19 +12,19 @@ const lightLink = "text-bone border-b border-ink-border pt-3 pb-1 min-h-11 box-b
 export default function ServicesHero() {
   return (
     <section className="bg-ink text-bone">
-      <div className={`${container} py-[clamp(56px,7vw,96px)]`}>
+      <Container className="py-section">
         <nav aria-label="Breadcrumb" className="text-[13px] text-ink-muted mb-7">
           <Link href="/" className="text-ink-muted hover:text-bone inline-flex items-center min-h-11">
             Home
           </Link>{" "}
           / <span className="text-bone" aria-current="page">Services</span>
         </nav>
-        <h1 className="m-0 font-serif font-normal text-[clamp(52px,7.4vw,108px)] leading-[0.95] tracking-[-0.02em]">
+        <h1 className="m-0 font-serif font-normal text-display tracking-[-0.02em]">
           Men&apos;s grooming services
           <br />
           in <em className="text-accent-soft">Dubai</em>
         </h1>
-        <p className="mt-7 mb-0 text-ink-text text-lg max-w-[600px]">
+        <p className="mt-7 mb-0 text-ink-text text-body max-w-[600px]">
           Hair, beard and facial care by an expert barber with 18+ years of experience. Every service is available in
           our salon or at your home.
         </p>
@@ -35,7 +35,7 @@ export default function ServicesHero() {
             </a>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

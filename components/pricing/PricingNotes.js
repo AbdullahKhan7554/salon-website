@@ -1,15 +1,12 @@
 import Link from "next/link";
-import { container } from "@/components/home/constants";
+import Container from "@/components/Container";
 
 const note = "m-0 pt-5 border-t border-line";
 const lead = "text-ink font-semibold";
 
 export default function PricingNotes() {
   return (
-    <section
-      aria-label="Pricing notes"
-      className={`${container} py-[clamp(56px,7vw,88px)] grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8 text-[15px] text-muted`}
-    >
+    <Container as="section" aria-label="Pricing notes" className="py-section grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8 text-[15px] text-muted">
       <p className={note}>
         <strong className={lead}>VAT included.</strong> Every price includes 5% UAE VAT.
       </p>
@@ -23,6 +20,6 @@ export default function PricingNotes() {
           Terms
         </Link>
       </p>
-    </section>
+    </Container>
   );
 }
